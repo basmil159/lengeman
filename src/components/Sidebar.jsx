@@ -71,7 +71,7 @@ export const Sidebar = () => {
         <div className="line"></div>
       <div id="navigation" className="navigation">
         <ul className="navigation__nav">
-          <NavLinks icon="work" title="Jobs" NavLinks="/" state={openNav}/>
+          <NavLinks icon="work" title="Jobs" NavLinks="/lengeman" state={openNav}/>
           <NavLinks icon="tool" title="Tool" NavLinks="/tools" state={openNav}/>
           <NavLinks icon="materials" title="Materials" NavLinks="/Materials" state={openNav}/>
           <div className="line"></div>
