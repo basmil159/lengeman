@@ -1,0 +1,47 @@
+.sidebar {
+  left: 2.5vh;
+  width: 8rem;
+    top: 50%;
+    padding: 20px 10px;
+    transform: translate(0, -50%);
+    position: fixed;
+    min-height: 95vh;
+    z-index: 2;
+ 
+    overflow-x: hidden;
+    transition: all 0.5s;
+
+  &__logo{
+    text-align: center;
+    color: $color-primary;  
+    transition: 0.5s;  
+
+  }
+  &__logo[collapse]{
+    font-size: 0;
+    &:first-letter {  
+      font-size: 3.2rem;
+    }
+  }
+  
+   
+  
+  .line {
+    height: 1px;
+    background-color: #e3e3e3;
+    margin-top: 2rem;
+
+    &:first-of-type{
+      margin-top:0.5rem ;
+    }
+  }
+
+  
+
+  @include respond(tab-port) {
+    top: 8rem;
+    position: fixed;
+    width: 0rem;
+  }
+}
+

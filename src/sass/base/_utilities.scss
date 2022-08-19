@@ -1,0 +1,30 @@
+.active {
+  color: $color-primary !important;
+}
+
+// for all the svg icons height and width
+.tiny-svg {
+  @include svgs(1.6rem, 1.6rem);
+  fill: $color-black;
+  @include respond(tab-port) {
+    @include svgs(1.4rem, 1.4rem);
+  }
+}
+.small-svg {
+  @include svgs(2rem, 2rem);
+  @include respond(tab-port) {
+    @include svgs(1.8rem, 1.8rem);
+  }
+}
+.medium-svg {
+  @include svgs(2.4rem, 2.4rem);
+  @include respond(tab-port) {
+    @include svgs(2.2rem, 2.2rem);
+  }
+}
+.big-svg {
+  @include svgs(3.2rem, 3.2rem);
+  @include respond(tab-port) {
+    @include svgs(3rem, 3rem);
+  }
+}

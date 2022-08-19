@@ -1,0 +1,130 @@
+.navigation {
+  animation: moveInLeft 1s ease-in-out;
+  // overflow: hidden;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin: 0 2px;
+  transition: 1s;
+  @include respond(tab-port) {
+    transform: translate(-500%, 0);
+    transition: 0.3s transform ease;
+  }
+
+ 
+
+  
+
+  &__nav {
+    list-style: none;
+    width: 100%;
+    margin-top: 2rem;
+
+    #auto-detect:checked ~ &--btn .off {
+      display: block !important;
+    }
+    #auto-detect:checked ~ &--btn .on {
+      display: none;
+    }
+    #auto-detect:checked ~ &--btn span {
+      color: #747474;
+    }
+
+    // @include respond(tab-land) {
+    //   &--hide-on-tab {
+    //     display: none;
+    //     opacity: 0;
+    //   }
+    // }
+
+    li {
+      position: relative;
+      display: flex;
+    position: relative;
+    width: 6rem;
+    height: 6rem;
+      white-space: nowrap;
+      margin: 1rem 0;
+      padding: 0.9rem 1.8rem;
+      transition: color, transform 0.45s ease-in-out;
+
+      
+      
+        span {
+          margin-left: 1rem;
+          // display: none;
+          // font-size: 0;
+        }
+      
+
+        &:last-child {        
+          position: absolute;
+          bottom: .5rem;
+          // background-color: red;
+          color: $color-primary;   
+          left: 50%;
+          transform: translate(-50%,0);     
+      }
+
+      svg {
+        fill: $color-primary;
+        stroke-width: 1.5px;
+      }
+
+      svg.off{
+        display: none;
+      }
+      
+      // svg.collapse{
+      //   transform: rotate(180deg);
+      // }
+
+      &:hover {
+        color: $color-primary;
+        border-radius: 50px 0 0 50px;
+        text-align: center;
+        border-radius: 10px;
+        background: #f1f0fb;
+        box-shadow:  5px 5px 10px #cdccd5,
+                     -5px -5px 10px #ffffff;
+
+        
+      }
+      
+
+      &:active{
+        border-radius: 10px;
+    background: #f1f0fb;
+    box-shadow: inset 5px 5px 10px #cdccd5, inset -5px -5px 10px #ffffff;
+}
+    }
+
+    &--elements,
+    &--btn {
+      color: inherit;
+      display: flex;
+      text-decoration: none;
+      flex-wrap: nowrap;
+      align-items: center;
+      width: fit-content;
+      cursor: pointer;
+      justify-content: center;
+      
+      &#Collapse svg{
+        transition: .5s;
+        border-radius: 50%;
+        transform:rotate(0deg);
+      }
+      &#Collapse[rotate] svg{
+        transform:rotate(180deg);
+      }
+    }
+
+  }
+
+  
+
+
+ 
+}
