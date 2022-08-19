@@ -62,7 +62,7 @@ export const Sidebar = () => {
   return (
     <section id="sidebar" className="sidebar">
       
-      <a href="/" className="sidebar__logo-box">
+      <a href="/lengeman" className="sidebar__logo-box">
         
       <h1 className="sidebar__logo" id="logo" collapse="1">BlackBox</h1>
       {/* {openNav && <h1 className="sidebar__logo" id="logo-big">BlackBox</h1>} */}
