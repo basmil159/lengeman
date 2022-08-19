@@ -10,7 +10,7 @@ export const App = () => {
           <Sidebar />
           <div className="wrapper__body" style={{position:"relative", padding:"1.5rem", left: "11.5rem", width: "calc(100vw - 14rem)"}} >
           <Routes>
-            <Route path="/lengeman" element={<Jobs />} />
+            <Route path="/lengeman/" element={<Jobs />} />
             {/* <Route path="tools" element={<Tools />} /> */}
             {/* <Route path="materials" element={<Materials />} /> */}
             {/* <Route path="setting" element={<Setting />} /> */}
