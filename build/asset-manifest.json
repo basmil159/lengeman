@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/lengeman/static/css/main.818df3f5.css",
+    "main.js": "/lengeman/static/js/main.ef4b3e6c.js",
+    "index.html": "/lengeman/index.html",
+    "main.818df3f5.css.map": "/lengeman/static/css/main.818df3f5.css.map",
+    "main.ef4b3e6c.js.map": "/lengeman/static/js/main.ef4b3e6c.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.818df3f5.css",
+    "static/js/main.ef4b3e6c.js"
+  ]
+}
