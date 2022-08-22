@@ -1,6 +1,7 @@
 import { Svgs } from "./Svgs";
 import { Link } from "react-router-dom";
 import { useState } from "react";
+import logo from '../img/blackbox.png';
 /**
  * @NavLinks receives two props, title and icon
  * using template literal, we concatenate props.icon with svg's link to retrieve desired icon
@@ -52,8 +53,11 @@ export const Sidebar = () => {
       <a href="/lengeman" className="sidebar__logo-box">
         
       <h1 className="sidebar__logo" id="logo" collapse="1">Lengeman</h1>
-      {/* {openNav && <h1 className="sidebar__logo" id="logo-big">BlackBox</h1>} */}
-      {/* {!openNav && <h1 className="sidebar__logo sidebar__logo--small" id="logo-small">B</h1>} */}
+      <div className="sidebar__logo--blackbox">
+        <img src={logo} width="28" height="28"  alt="BLACKBOX"/>
+        <span>BlackBOX</span>
+      </div>
+      
       </a>
       <div class="toggle" onClick={toggleMenu}>
         <span></span>

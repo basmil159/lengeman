@@ -18,11 +18,28 @@
   transition: all 0.5s;
   
   &__logo{
+    // text-shadow:-6px 6px 15px rgba(0,0,0,0.5),                6px -6px 15px rgba(255,255,255,0.8);
     text-align: center;
     color: $color-primary;  
     transition: all 0.5s;  
     letter-spacing: -2.5px;
     font-size: 3.2rem;
+
+    &--blackbox{
+      display: flex;
+      font-size: 2rem;
+      font-weight: 700;
+      text-align: center;
+      justify-content: space-around;
+      align-items: center;
+    align-content: center;
+    flex-wrap: nowrap;
+    color: $color-primary;  
+    
+    transition: all 0.5s;  
+    // letter-spacing: -2.5px;
+      text-transform: uppercase;
+    }
     &:first-letter {  
       font-size: 3.2rem;
     }
@@ -55,7 +72,11 @@
     width: 0rem;
   }
 }
-
+a.sidebar__logo-box {
+  border-radius: 8px;
+  background: #544bad;
+  box-shadow: 2px 2px 12px #cccccc, -1px -1px 12px #ddd9d9;
+}
 
 
 .toggle{
@@ -68,11 +89,11 @@
   align-items: center;
   justify-content: center;
 
-  overflow: hidden;
+  // overflow: hidden;
 }
 .toggle span{
   position: absolute;
-  width: 2rem;
+  width: 1rem;
   height: .25rem;
   border-radius: 4px;
   background-color: #1863ff;
@@ -80,22 +101,28 @@
 }
 .toggle span:nth-child(1){
   transform: translateY(-8px);
-  width: 2.5rem;
+  width: 2rem;
   left: 5px;
 }
 .toggle.active span:nth-child(1){
   transform: translateY(0) rotate(45deg);
-  width: 4rem;
+  width: 2rem;
+  left: 18px;
 }
 .toggle span:nth-child(2){
   transform: translateY(8px);
-  width: 2.5rem;
-  left: 4px;
+  width: 2rem;
+  left: 5px;
 }
 .toggle.active span:nth-child(2){
   transform: translateY(0) rotate(315deg);
-  width: 4rem;
+  width:2rem;
+  left: 18px;
 }
 .toggle.active span:nth-child(3){
-  transform: translateX(-60px);
+  transform: translateX(-6rem);
+  width: 10rem;
+  border-radius: 8px;
+  background: #e3e3e3;
+  box-shadow: 1px 1px 5px #cccccc, -1px -1px 5px #ddd9d9;
 }
