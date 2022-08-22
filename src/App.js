@@ -6,9 +6,9 @@ import { Routes, Route } from "react-router-dom";
 
 export const App = () => {
   return (
-      <div className="wrapper">      
+      <>      
           <Sidebar />
-          <div className="wrapper__body" style={{position:"relative", padding:"1.5rem", left: "11.5rem", width: "calc(100vw - 14rem)"}} >
+          <div className="wrapper__body">
           <Routes>
             <Route path="lengeman" element={<Jobs />} />
             {/* <Route path="tools" element={<Tools />} /> */}
@@ -17,7 +17,7 @@ export const App = () => {
             {/* <Route path="logs" element={<Logs />} /> */}
           </Routes>
          </div>
-         </div>
+         </>
 
   );
 };

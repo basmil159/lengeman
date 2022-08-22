@@ -29,6 +29,9 @@ const NavLinks = (props) => {
             element.style.justifyContent="left";
             element.style.width="calc(100% - 0rem )";
           });
+          document.querySelectorAll(".wrapper__body").forEach(element => {
+            element.style.marginLeft="2rem";
+          });
       
         }
 
@@ -64,7 +67,7 @@ export const Sidebar = () => {
       
       <a href="/lengeman" className="sidebar__logo-box">
         
-      <h1 className="sidebar__logo" id="logo" collapse="1">BlackBox</h1>
+      <h1 className="sidebar__logo" id="logo" collapse="1">Lengeman</h1>
       {/* {openNav && <h1 className="sidebar__logo" id="logo-big">BlackBox</h1>} */}
       {/* {!openNav && <h1 className="sidebar__logo sidebar__logo--small" id="logo-small">B</h1>} */}
       </a>

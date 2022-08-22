@@ -1,20 +1,27 @@
+
+// css for sidebar
 .sidebar {
-  left: 2.5vh;
+  left: 2rem;
+  display: inline-block;
+  // margin-right: -2.5vh;
   width: 8rem;
-    top: 50%;
-    padding: 20px 10px;
-    transform: translate(0, -50%);
-    position: fixed;
-    min-height: 95vh;
-    z-index: 2;
- 
-    overflow-x: hidden;
-    transition: all 0.5s;
+  top: 50vh;
+  padding: 8px 10px;
+  transform: translate(0, -50%);
+  position: relative;
+  min-height: 95vh;
+  z-index: 2;
+  border-radius: 10px;
+  background: #f1f0fb;
+  box-shadow: 2px 2px 12px #cccccc, -1px -1px 12px #ddd9d9;
+  overflow-x: hidden;
+  transition: all 0.5s;
 
   &__logo{
     text-align: center;
     color: $color-primary;  
     transition: 0.5s;  
+    letter-spacing: -2.5px;
 
   }
   &__logo[collapse]{

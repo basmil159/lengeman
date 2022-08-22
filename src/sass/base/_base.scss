@@ -1,3 +1,5 @@
+// css for base components 
+
 /* normalize css */
 *,
 *::after,
@@ -41,15 +43,17 @@ body {
 
 
 
-main {
-  display: grid;
-  grid-template-columns: max-content 1fr;
-  grid-template-rows: max-content 1fr;
+.wrapper {
+  display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
   position: relative;
   transition: all 0.3s ease;
   overflow-x: hidden;
-
-  @include respond(tab-port) {
-    grid-template-columns: 1fr;
+  &__body{
+    position: relative;
+    width: calc(100vw - 10rem);
+    padding: 1.5rem 2.5rem;
   }
+
 }
