@@ -5,7 +5,7 @@ import { Sidebar } from "./components/Sidebar";
 import { Routes, Route } from "react-router-dom";
 
 export const App = () => {
-  return (
+  return ( 
       <>      
           <Sidebar />
           <div className="wrapper__body">
