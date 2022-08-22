@@ -6,46 +6,8 @@ import { useState } from "react";
  * using template literal, we concatenate props.icon with svg's link to retrieve desired icon
  */
 const NavLinks = (props) => { 
-  const title=props.title;
-  if (title === "Collapse") {
-    return (
-     <li className="heading-secondary nav-element" onClick={
-      ()=>{
-        if (props.state) {
-          props.collapse(false);
-          document.getElementById("sidebar").style.width = "8rem";
-          // document.getElementById("sidebar").style.borderRadius = "50px";   
-          document.getElementById("Collapse").removeAttribute("rotate", "1");        
-          document.getElementById("logo").setAttribute("collapse", "1");
-          document.querySelectorAll(".nav-element").forEach(element => {element.style.justifyContent="center";});
-          
-        } else {
-          props.collapse(true);      
-          document.getElementById("sidebar").style.width = "20rem"; 
-          // document.getElementById("sidebar").style.borderRadius = "10px";    
-          document.getElementById("logo").removeAttribute("collapse", "1"); 
-          document.getElementById("Collapse").setAttribute("rotate", "1");   
-          document.querySelectorAll(".nav-element").forEach(element => {
-            element.style.justifyContent="left";
-            element.style.width="calc(100% - 0rem )";
-          });
-          document.querySelectorAll(".wrapper__body").forEach(element => {
-            element.style.marginLeft="2rem";
-          });
-      
-        }
-
-
-      }
-     } >
-      <Link className="navigation__nav--elements" id={props.title} to={props.NavLinks} style={{width: "auto"}}>
-          <Svgs icon={props.icon} title={`small-svg ${props.title}`} />
-          {props.state && <span className="navigation__nav--hide-on-tab ">{props.title}</span>}
-          
-        </Link>
-      </li>
-    );
-  }else{
+  // const title=props.title;
+  
     return (
       <li className="heading-secondary nav-element">
        <Link className="navigation__nav--elements" to={props.NavLinks}>
@@ -54,14 +16,36 @@ const NavLinks = (props) => {
          </Link>
        </li>
      );
-  }
- 
-};
+  };
 
 
 
 export const Sidebar = () => {
   const [openNav, setOpenNav] = useState(false);
+  const toggleMenu = () => {
+    document.querySelector('.toggle').classList.toggle('active');
+    document.getElementById("logo").toggleAttribute("collapse", "1");
+    if (openNav) {
+      setOpenNav(false);
+      document.getElementById("sidebar").style.width = "8rem";
+      document.querySelectorAll(".nav-element").forEach(element => {
+        element.style.justifyContent="center";
+      });
+      
+    } else {
+      setOpenNav(true);      
+      document.getElementById("sidebar").style.width = "20rem"; 
+      // document.querySelector(".nav-element").style.cssText='justifyContent: left; width: calc(100% - 0rem )';
+      document.querySelectorAll(".nav-element").forEach(element => {
+        element.style.justifyContent="left";
+        element.style.width="calc(100% - 0rem )";
+      });
+      document.querySelectorAll(".wrapper__body").forEach(element => {
+        element.style.marginLeft="2rem";
+      });
+  
+    }
+  };
   return (
     <section id="sidebar" className="sidebar">
       
@@ -71,18 +55,20 @@ export const Sidebar = () => {
       {/* {openNav && <h1 className="sidebar__logo" id="logo-big">BlackBox</h1>} */}
       {/* {!openNav && <h1 className="sidebar__logo sidebar__logo--small" id="logo-small">B</h1>} */}
       </a>
-        <div className="line"></div>
+      <div class="toggle" onClick={toggleMenu}>
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
       <div id="navigation" className="navigation">
         <ul className="navigation__nav">
           <NavLinks icon="work" title="Jobs" NavLinks="/lengeman" state={openNav}/>
           <NavLinks icon="tool" title="Tool" NavLinks="/tools" state={openNav}/>
           <NavLinks icon="materials" title="Materials" NavLinks="/Materials" state={openNav}/>
-          <div className="line"></div>
           <NavLinks icon="setting" title="Setting" NavLinks="/Setting" state={openNav}/>
           <NavLinks icon="log" title="Logs" NavLinks="/Logs" state={openNav}/>
-          <div className="line"></div>
           <NavLinks icon="simulation" title="Simulation" NavLinks="/Logs" state={openNav}/>
-          <NavLinks icon="collapse" title="Collapse" NavLinks="#" collapse={setOpenNav} state={openNav}/>
+          <NavLinks icon="collapse" title="Site Setting" NavLinks="#" state={openNav}/>
         </ul>
         
         
