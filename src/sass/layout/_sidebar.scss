@@ -16,16 +16,20 @@
   box-shadow: 2px 2px 12px #cccccc, -1px -1px 12px #ddd9d9;
   overflow-x: hidden;
   transition: all 0.5s;
-
+  
   &__logo{
     text-align: center;
     color: $color-primary;  
-    transition: 0.5s;  
+    transition: all 0.5s;  
     letter-spacing: -2.5px;
-
+    font-size: 3.2rem;
+    &:first-letter {  
+      font-size: 3.2rem;
+    }
   }
   &__logo[collapse]{
     font-size: 0;
+    
     &:first-letter {  
       font-size: 3.2rem;
     }

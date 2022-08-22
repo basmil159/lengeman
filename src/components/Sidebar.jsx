@@ -24,7 +24,7 @@ export const Sidebar = () => {
   const [openNav, setOpenNav] = useState(false);
   const toggleMenu = () => {
     document.querySelector('.toggle').classList.toggle('active');
-    document.getElementById("logo").toggleAttribute("collapse", "1");
+    document.getElementById("logo").toggleAttribute("collapse");
     if (openNav) {
       setOpenNav(false);
       document.getElementById("sidebar").style.width = "8rem";
