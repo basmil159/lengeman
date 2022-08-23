@@ -17,40 +17,65 @@
   overflow-x: hidden;
   transition: all 0.5s;
   
+.logo-hide{
+  transition: .8s;
+}
+  h1.logo-hide[hide],.logo-hide[hide] span{
+    // font-size:0;
+    transform: translateX(20rem);
+    
+    position: absolute;
+    // display: none;
+  }
+  .logo-hide[hide]{
+    flex-direction: column;
+    img{
+      width: 3.2rem;
+      height: 3.2rem;
+    }
+    
+  }
+  
   &__logo{
     // text-shadow:-6px 6px 15px rgba(0,0,0,0.5),                6px -6px 15px rgba(255,255,255,0.8);
     text-align: center;
     color: $color-primary;  
-    transition: all 0.5s;  
+    transition: font-size 0.5s;  
     letter-spacing: -2.5px;
     font-size: 3.2rem;
+
 
     &--blackbox{
       display: flex;
       font-size: 2rem;
       font-weight: 700;
       text-align: center;
-      justify-content: space-around;
+      justify-content: center;
       align-items: center;
     align-content: center;
     flex-wrap: nowrap;
+    padding:.9rem .5rem ;
+    gap: 1rem;
+    margin-bottom: 1rem;
     color: $color-primary;  
     
-    transition: all 0.5s;  
     // letter-spacing: -2.5px;
-      text-transform: uppercase;
+    text-transform: uppercase;
+    img{
+        transition: all 0.5s;  
+        width: 2.2rem;
+        height: 2.2rem;
+      }
     }
-    &:first-letter {  
-      font-size: 3.2rem;
-    }
-  }
-  &__logo[collapse]{
-    font-size: 0;
     
-    &:first-letter {  
-      font-size: 3.2rem;
-    }
   }
+  // &__profile[collapse]{
+  //   font-size: 0;
+    
+  //   &:first-letter {  
+  //     font-size: 3.2rem;
+  //   }
+  // }
   
    
   
@@ -72,11 +97,12 @@
     width: 0rem;
   }
 }
-a.sidebar__logo-box {
-  border-radius: 8px;
-  background: #544bad;
-  box-shadow: 2px 2px 12px #cccccc, -1px -1px 12px #ddd9d9;
-}
+// a.sidebar__logo-box {
+//   display: block;
+//   border-radius: 8px;
+//   background: #f1f0fb;
+//   box-shadow: -2px -2px 12px #cccccc, 5px 5px 12px #ddd9d9;
+// }
 
 
 .toggle{
@@ -124,5 +150,5 @@ a.sidebar__logo-box {
   width: 10rem;
   border-radius: 8px;
   background: #e3e3e3;
-  box-shadow: 1px 1px 5px #cccccc, -1px -1px 5px #ddd9d9;
+  // box-shadow: 1px 1px 5px #cccccc, -1px -1px 5px #ddd9d9;
 }
