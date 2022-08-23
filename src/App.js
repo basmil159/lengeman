@@ -25,5 +25,5 @@ export const App = () => {
 
 let Tools, Logs, Setting, Materials;
 Tools = Logs = Setting = Materials = () => {
-  return <h1 Style="margin:0 auto; color:red;">Page comming soon</h1>;
+  return <h1 Style="margin: auto;  color: red; height:100%; width: fit-content;">Page comming soon</h1>;
 };

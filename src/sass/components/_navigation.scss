@@ -1,7 +1,6 @@
 // css for Sidebar Navigation
 .navigation {
   animation: moveInLeft 1s ease-in-out;
-  // overflow: hidden;
   height: 100%;
   width: 100%;
   display: flex;
@@ -13,14 +12,9 @@
     transition: 0.3s transform ease;
   }
 
- 
-
-  
-
   &__nav {
     list-style: none;
     width: 100%;
-    margin-top: 2rem;
 
     #auto-detect:checked ~ &--btn .off {
       display: block !important;
@@ -32,111 +26,91 @@
       color: #747474;
     }
 
-    // @include respond(tab-land) {
-    //   &--hide-on-tab {
-    //     display: none;
-    //     opacity: 0;
-    //   }
-    // }
-
     li {
       position: relative;
       display: flex;
-    position: relative;
-    width: 6rem;
-    height: 6rem;
+      position: relative;
+      width: 5rem;
+      height: 5rem;
       white-space: nowrap;
-      margin: .5rem 0;
-      // padding: 0.9rem 1.8rem;
       transition: color, transform 0.45s ease-in-out;
+      &:not(:last-child) {
+        margin-top: 0.2rem;
+        margin-bottom: 1rem;
+      }
 
-      
-      
-        span {
-          margin-left: 1rem;
-          // display: none;
-          // font-size: 0;
-        }
-      
-
-      //   &:last-child {        
-      //     position: absolute;
-      //     bottom: .5rem;
-      //     width: fit-content!important;
-      //     // background-color: red;
-      //     color: $color-primary;   
-      //     left: 50%;
-      //     transform: translate(-50%,0);     
-      // }
+      span {
+        margin-left: 1rem;
+        transition: all 0.5s;
+      }
 
       svg {
         fill: $color-primary;
         stroke-width: 1.5px;
       }
 
-      svg.off{
+      svg.off {
         display: none;
       }
-      
-      // svg.collapse{
-      //   transform: rotate(180deg);
-      // }
-
-      &:hover {
-        color: $color-primary;
-        border-radius: 50px 0 0 50px;
-        text-align: center;
-        border-radius: 10px;
-        background: #f1f0fb;
-        box-shadow:  5px 5px 10px #cdccd5,
-                     -5px -5px 10px #ffffff;
-
-        
-      }
-      
-
-      &:active{
-        border-radius: 10px;
-    background: #f1f0fb;
-    box-shadow: inset 5px 5px 10px #cdccd5, inset -5px -5px 10px #ffffff;
-}
     }
 
     &--elements,
     &--btn {
+      position: relative;
       color: inherit;
-    display: flex;
-    text-decoration: none;
-    flex-wrap: nowrap;
-    align-items: center;
-    width: -moz-fit-content;
-    width: 100%;
-    padding: 0.9rem 1.8rem;
-    height: 100%;
-    cursor: pointer;
-    justify-content: flex-start;
-    &.active{
+      display: flex;
+      text-decoration: none;
+      flex-wrap: nowrap;
+      align-items: center;
+      width: -moz-fit-content;
+      width: 100%;
+      padding: 0.5rem 1rem;
+      height: 100%;
+      cursor: pointer;
       border-radius: 10px;
-  background: #f1f0fb;
-  box-shadow: inset 5px 5px 10px #cdccd5, inset -5px -5px 10px #ffffff;
-}
-      
-      &#Collapse svg{
-        transition: .5s;
-        border-radius: 50%;
-        transform:rotate(0deg);
+      background: #f1f0fb;
+      justify-content: flex-start;
+
+      &.active {
+        color: $color-primary;
+        box-shadow: inset 5px 5px 10px #cdccd5, inset -5px -5px 10px #ffffff;
       }
-      &#Collapse[rotate] svg{
-        transform:rotate(180deg);
+
+      &:hover {
+        color: $color-primary;
+        text-align: center;
+        box-shadow: 5px 5px 10px #cdccd5, -5px -5px 10px #ffffff;
+      }
+
+      &:active {
+        box-shadow: inset 5px 5px 10px #cdccd5, inset -5px -5px 10px #ffffff;
+      }
+
+      &#Collapse svg {
+        transition: 0.5s;
+        border-radius: 50%;
+        transform: rotate(0deg);
+      }
+      &#Collapse[rotate] svg {
+        transform: rotate(180deg);
       }
     }
-
-  
-
   }
 
-  
+  [nav-collapse="1"] {
+    display: block;
 
-
- 
+    svg {
+      vertical-align: middle;
+      top: 50%;
+      left: 50%;
+      position: absolute;
+      transform: translate(-50%, -50%);
+    }
+    span {
+      transform: translateX(20rem);
+      position: absolute;
+      height: 0;
+    }
+  }
 }

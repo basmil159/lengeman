@@ -18,10 +18,9 @@ const navLinks = document.querySelectorAll('.navigation__nav--elements').forEach
 })
 };
 
-window.onload= activePage;
 window.onload=() => {
   // Call active page function so that the home page or any active page is displayed as active in navbar 
- 
+  activePage();
   // For extracting the first letter from the username and use it as a profile Pic
   let firstName = document.getElementById("userName").innerText;
   let intials = firstName.charAt(0);
@@ -31,22 +30,23 @@ window.onload=() => {
 const NavLinks = (props) => { 
   const title=props.title;
   
-  if (title=="Site Setting") {
+  if (title=="Simulation") {
     return (
     <li className="heading-secondary nav-element" >
-       <a className="navigation__nav--elements" href="javascript:void(0);" >
+       <a className="navigation__nav--elements" href="javascript:void(0);" nav-collapse={`${!props.state ? "1" : "0"}`}>
            <Svgs icon={props.icon} title={`small-svg ${props.title}`} />
-           {props.state && <span className="navigation__nav--hide-on-tab ">{props.title}</span>}
+           <span >{props.title}</span>
+           
          </a>
        </li>
     );
   } 
     return (
-      
+      // {props.state && <span className="navigation__nav--hide-on-tab ">{props.title}</span>}
       <li className="heading-secondary nav-element" onClick={activePage}>
-       <Link className={`navigation__nav--elements`} to={props.NavLinks}>
+       <Link className={`navigation__nav--elements`} to={props.NavLinks} nav-collapse={`${!props.state ? "1" : "0"}`}>
            <Svgs icon={props.icon} title={`small-svg ${props.title}`} />
-           {props.state && <span className="navigation__nav--hide-on-tab ">{props.title}</span>}
+           <span >{props.title}</span>
          </Link>
        </li>
      );
@@ -98,14 +98,19 @@ const NavLinks = (props) => {
 
       return (
         <section id="sidebar" className="sidebar">          
-          <a href="/lengeman" className="sidebar__logo-box">            
-            <h1 className="sidebar__logo logo-hide"  hide="1" id="logo" collapse="1">Lengeman</h1>
-            <div className="sidebar__logo--blackbox logo-hide" hide="1">
+          <div className="sidebar__top">
+          <Link to="/lengeman" className="sidebar__logo-box">   
+          <div className="sidebar__logo--blackbox logo-hide" hide="1">
               <img src={logo} width="28" height="28"  alt="BLACKBOX"/>
               <span >BlackBOX</span>
+            </div>         
+            <h1 className="sidebar__logo logo-hide"  hide="1" id="logo" collapse="1">Lengeman</h1>
+          </Link>
+            <div className="sidebar__user logo-hide" hide="1">
+              <div className="sidebar__user--pic"><pic id="profilePic"></pic></div>
+              <span className="sidebar__user--name " id="userName"  >Harry Potter</span>
             </div>
-          </a>
-          
+          </div>
           <div class="toggle" onClick={toggleMenu}>
             <span></span>
             <span></span>
@@ -114,25 +119,20 @@ const NavLinks = (props) => {
           <div id="navigation" className="navigation">
             <ul className="navigation__nav">
               
-              <NavLinks icon="work" title="Jobs" NavLinks="/lengeman/" state={openNav}/>
+              <NavLinks icon="work" title="Jobs" NavLinks="/lengeman" state={openNav}/>
               <NavLinks icon="tool" title="Tool" NavLinks="/tools" state={openNav}/>
               <NavLinks icon="materials" title="Materials" NavLinks="/Materials" state={openNav}/>
-              <NavLinks icon="setting" title="Setting" NavLinks="/Setting" state={openNav}/>
+              <NavLinks icon="configure" title="Configure" NavLinks="/Configure" state={openNav}/>
               <NavLinks icon="log" title="Logs" NavLinks="/Logs" state={openNav}/>
               <NavLinks icon="simulation" title="Simulation" NavLinks="/simulation" state={openNav}/>
               {/* <NavLinks icon="setting" title="Site Setting" NavLinks="#" state={openNav}/> */}
             </ul>
           </div>
-          <div className="sidebar__bottom">
-            <div className="sidebar__user logo-hide" hide="1">
-              <div className="sidebar__user--pic" id="profilePic"></div>
-              <span className="sidebar__user--name " id="userName"  >Harry</span>
-            </div>
-            <div className="sidebar__bottom--divider"></div>
-            <div className="sidebar__setting logo-hide" hide="1">
-            <Svgs icon="setting" title="small-svg" />
-           <span>Setting</span>
-            </div> 
+          <div className="sidebar__bottom logo-hide" hide="1">
+            
+              <Svgs icon="setting" title="small-svg" />
+              <span>Setting</span>
+            
           </div>
         </section>
       );

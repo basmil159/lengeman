@@ -1,9 +1,7 @@
-
 // css for sidebar
 .sidebar {
   left: 2rem;
   display: inline-block;
-  // margin-right: -2.5vh;
   width: 8rem;
   top: 50vh;
   padding: 8px 10px;
@@ -16,184 +14,208 @@
   box-shadow: 2px 2px 12px #cccccc, -1px -1px 12px #ddd9d9;
   overflow-x: hidden;
   transition: all 0.5s;
-  
-.logo-hide{
-  transition: .8s;
-}
-h1.logo-hide[hide],.logo-hide[hide] h3,.logo-hide[hide] span{
-    // font-size:0;
-    transform: translateX(20rem);
-    
-    position: absolute;
-    // display: none;
+
+  .logo-hide,
+  h1.logo-hide,
+  .logo-hide span {
+    transition: all 0.5s;
   }
-  .logo-hide[hide]{
+  h1.logo-hide[hide],
+  .logo-hide[hide] span {
+    transform: translateX(20rem);
+    display: block;
+    position: absolute;
+  }
+  .logo-hide[hide] {
     flex-direction: column;
-    img{
+    img {
       width: 3.2rem;
       height: 3.2rem;
     }
-    
+  }
+  &__top{
+    margin: 0 -.5rem;
+    margin-bottom: 2rem;
   }
 
-  
-  
-  &__logo{
-    // text-shadow:-6px 6px 15px rgba(0,0,0,0.5),                6px -6px 15px rgba(255,255,255,0.8);
+  &__logo-box {
+    display: block;
+    // box-shadow: 0px 0px 4px 1px #cdccd5bf;
+    box-shadow: 1px 1px 4px #cdccd5, -2px -2px 0px #faf9f9;
+    border-radius: 8px;
+    padding: 0.5rem;
+    margin-bottom: 1rem;
+  }
+
+  &__logo {
     text-align: center;
-    color: $color-primary;  
-    transition: font-size 0.5s;  
+    color: $color-primary;
+    transition: font-size 0.5s;
     letter-spacing: -2.5px;
-    font-size: 3.2rem;
+    font-size: 3rem;
+    line-height: 2.5rem;
 
-
-    &--blackbox{
+    &--blackbox {
       display: flex;
-      font-size: 2rem;
+      font-size: 1.2rem;
       font-weight: 700;
       text-align: center;
       justify-content: center;
       align-items: center;
-    align-content: center;
-    flex-wrap: nowrap;
-    padding:.9rem .5rem ;
-    gap: 1rem;
-    margin-bottom: .5rem;
-    color: $color-primary;  
-    
-    // letter-spacing: -2.5px;
-    text-transform: uppercase;
-    img{
-        transition: all 0.5s;  
-        width: 3rem;
-        height: 3rem;
+      align-content: center;
+      flex-wrap: nowrap;
+      padding-bottom: 0.5rem;
+      gap: 1rem;
+      color: #0072bc;
+      transition: all 0.5s;
+      text-transform: uppercase;
+      img {
+        transition: all 0.5s;
+        width: 1.5rem;
+        height: 1.5rem;
       }
     }
-    
   }
-  // &__profile[collapse]{
-  //   font-size: 0;
-    
-  //   &:first-letter {  
-  //     font-size: 3.2rem;
-  //   }
-  // }
-  
-   
-  
+
   .line {
     height: 1px;
     background-color: #e3e3e3;
     margin-top: 2rem;
 
-    &:first-of-type{
-      margin-top:0.5rem ;
+    &:first-of-type {
+      margin-top: 0.5rem;
     }
   }
 
-  
-&__bottom{
-  display: flex;
-    justify-content: space-between;
+  &__bottom {
+    display: flex;
+    justify-content: left;
     position: absolute;
     margin: 1rem 0;
+    border-radius: 8px;
     bottom: 0;
-    left: 0;
-    width: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 85%;
+    height: 5rem;
     padding: 0.5rem 1.5rem;
     align-items: center;
     align-content: center;
 
-  &--divider{
-      background-color: #cccccc;
-      width: .2rem;
-      height: 1.5rem;
-      margin: 0 .5rem;
+    &:hover {
+      color: $color-primary;
+      border-radius: 50px 0 0 50px;
+      text-align: center;
+      border-radius: 10px;
+      background: #f1f0fb;
+      box-shadow: 5px 5px 10px #cdccd5, -5px -5px 10px #ffffff;
+    }
+
+    &:active {
+      box-shadow: inset 5px 5px 10px #cdccd5, inset -5px -5px 10px #ffffff;
+    }
+
+    &[hide] {
+      width: 5rem;
+      display: block;
+      svg {
+        position: relative;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
+    }
+    span {
+      margin-left: 1rem;
+      font-size: 2rem;
+    }
   }
-  
 
-}
-  &__user,&__setting{
-display: flex;
-justify-content: center;
-gap:.5rem;
-align-items: center;
+  &__user {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-top: 1.5rem;
+    align-items: center;
+    gap: 0.5rem;
 
+    &--pic {
+      font-size: 1.8rem;
+      height: 5rem;
+      width: 5rem;
+      color: #f1f0fb;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      padding: 0.5rem;
+      border-radius: 50%;
+      background-color: #0072bc;
+    }
 
-&--pic{
-  font-size: 1.5rem;
-  height: 2.2rem;
-  width:  2.2rem;
-  color: #f1f0fb;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-weight: 400;
-  padding:.5rem;
-  border-radius: 50%;
-  background-color: #0072bc;
-}
-
-
+    &[hide] .sidebar__user--pic {
+      height: 3rem;
+      width: 3rem;
+    }
 
     span {
-      font-size: 1.5rem;
+      font-size: 2rem;
       width: max-content;
     }
   }
 }
-// a.sidebar__logo-box {
-//   display: block;
-//   border-radius: 8px;
-//   background: #f1f0fb;
-//   box-shadow: -2px -2px 12px #cccccc, 5px 5px 12px #ddd9d9;
-// }
 
-
-.toggle{
-  left: 100%;
-  transform: translate(-100%,0);
+.toggle {
+  left: 50%;
+  transform: translate(-50%, 0);
   position: relative;
   width: 4rem;
   height: 2rem;
   display: flex;
   align-items: center;
   justify-content: center;
-
-  // overflow: hidden;
+  margin: 2rem 0;
 }
-.toggle span{
+.toggle span {
   position: absolute;
   width: 1rem;
-  height: .25rem;
+  height: 0.25rem;
   border-radius: 4px;
-  background-color: #1863ff;
-  transition: 0.5s;
+  background-color: #0072bc;
+  transition: 0.65s;
 }
-.toggle span:nth-child(1){
+.toggle span:nth-child(1) {
   transform: translateY(-8px);
   width: 2rem;
-  left: 5px;
 }
-.toggle.active span:nth-child(1){
+.toggle.active {
+  margin: 1rem 0;
+  left:95%;
+  top: 2px;
+  position: absolute;
+  transform: translateX(-100%);
+}
+.toggle.active span:nth-child(1) {
   transform: translateY(0) rotate(45deg);
   width: 2rem;
   left: 18px;
 }
-.toggle span:nth-child(2){
+.toggle span:nth-child(2) {
   transform: translateY(8px);
   width: 2rem;
-  left: 5px;
 }
-.toggle.active span:nth-child(2){
+.toggle.active span:nth-child(2) {
   transform: translateY(0) rotate(315deg);
-  width:2rem;
+  width: 2rem;
   left: 18px;
 }
-.toggle.active span:nth-child(3){
-  transform: translateX(-6rem);
-  width: 10rem;
-  border-radius: 8px;
-  background: #e3e3e3;
-  // box-shadow: 1px 1px 5px #cccccc, -1px -1px 5px #ddd9d9;
+
+.toggle span:nth-child(3) {
+  right: 10px;
+}
+
+.toggle.active span:nth-child(3) {
+  transform: translateX(-60rem);
+  // width: 10rem;
+  // background: #e3e3e3;
 }
