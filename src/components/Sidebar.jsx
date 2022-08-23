@@ -111,6 +111,7 @@ const NavLinks = (props) => {
               <span className="sidebar__user--name " id="userName"  >Harry Potter</span>
             </div>
           </div>
+          <div className="line"></div>
           <div class="toggle" onClick={toggleMenu}>
             <span></span>
             <span></span>

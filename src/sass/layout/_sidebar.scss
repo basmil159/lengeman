@@ -79,11 +79,7 @@
   .line {
     height: 1px;
     background-color: #e3e3e3;
-    margin-top: 2rem;
-
-    &:first-of-type {
-      margin-top: 0.5rem;
-    }
+    margin: 1rem 0;
   }
 
   &__bottom {
