@@ -18,7 +18,11 @@ const navLinks = document.querySelectorAll('.navigation__nav--elements').forEach
 })
 };
 
+<<<<<<< HEAD
 window.onload= activePage;
+=======
+window.onload=activePage;
+>>>>>>> c3c72f9b494e7943c9392466aa08bacd6dc9b044
 window.onload=() => {
   // Call active page function so that the home page or any active page is displayed as active in navbar 
  
