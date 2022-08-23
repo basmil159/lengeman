@@ -33,7 +33,7 @@ const NavLinks = (props) => {
   if (title=="Simulation") {
     return (
     <li className="heading-secondary nav-element" >
-       <a className="navigation__nav--elements" href="javascript:void(0);" nav-collapse={`${!props.state ? "1" : "0"}`}>
+       <a className="navigation__nav--elements" target="_blank" href="https://mr-xree.github.io/lmansimseqvier" nav-collapse={`${!props.state ? "1" : "0"}`}>
            <Svgs icon={props.icon} title={`small-svg ${props.title}`} />
            <span >{props.title}</span>
            

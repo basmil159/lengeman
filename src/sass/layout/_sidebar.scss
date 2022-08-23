@@ -135,9 +135,9 @@
     gap: 0.5rem;
 
     &--pic {
-      font-size: 1.8rem;
-      height: 5rem;
-      width: 5rem;
+      font-size: 2.5rem;
+      height: 4.5rem;
+      width: 4.5rem;
       color: #f1f0fb;
       display: flex;
       align-items: center;
@@ -146,9 +146,11 @@
       padding: 0.5rem;
       border-radius: 50%;
       background-color: #0072bc;
+      transition: all .5s;
     }
 
     &[hide] .sidebar__user--pic {
+      font-size: 2rem;
       height: 3rem;
       width: 3rem;
     }
