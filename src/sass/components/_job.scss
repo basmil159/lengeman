@@ -118,43 +118,8 @@
 
   &__status-add {
     margin-top: 2rem;
-    &--btn {
-      display: flex;
-      align-content: center;
-      text-transform: uppercase;
-      background: #0072bc;
-      border-radius: 8px;
-      padding: 0.5rem 1rem;
-      /* background: #f1f0fb; */
-      box-shadow: 4px 4px 5px #cdccd5, -5px -5px 10px #ffffff;
-
-      &:hover{
-        box-shadow: inset 4px 4px 5px #cdccd58c, inset -5px -5px 10px #ffffff52;
-      }
-
-      h3 {
-        color: $color-grey-light;
-      }
-      svg {
-        fill: $color-grey-light;
-        margin-right: 0.8rem;
-      }
-    }
+    
   }
-
-  // &.Progress{
-  //   // grid-column: 1/-1;
-  //   animation: progress 1.5s infinite cubic-bezier(0.25, 0.1, 0.25, 1);
-  //   width: 100%;
-    
-      
-      
-    
-  // }
-
-  // &.Done{
-  //   box-shadow: inset 4px 4px 5px #cdccd5, inset -5px -5px 10px #ffffff;
-  // }
 
 
 }

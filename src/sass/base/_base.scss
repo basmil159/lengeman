@@ -57,4 +57,25 @@ body {
     padding: 1.5rem 2.5rem;
   }
 
+  button{
+    background-color: #f1f0fb;
+    border-radius: 8px;
+    font-size: 1.6rem;
+    line-height: 2.1rem;
+    color: $color-primary;
+    display: flex;
+    align-content: center;
+    text-transform: uppercase;
+    padding: 0.5rem 1rem;
+    border: none;
+    box-shadow: 5px 5px 8px #cdccd5, -5px -5px 8px  #ffffff;
+    &:hover{
+      box-shadow: -5px -5px 8px #cdccd5, 5px 5px 8px #ffffff;
+    }
+
+    &:active{
+      box-shadow: inset 5px 5px 10px #cdccd58c, inset -5px -5px 10px #ffffffbd;
+    }
+  }
+
 }

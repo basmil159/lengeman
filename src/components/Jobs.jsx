@@ -71,7 +71,6 @@ const JobField = (props) => {
 };
 
 const Job = (props) => {
-  
   return (
     <div className={`job ${props.title}`}>
       <div className="job__status">
@@ -80,47 +79,46 @@ const Job = (props) => {
           <use xlinkHref="img/blackbox.svg#filter_list"></use>
         </svg>
       </div>
-    <div className={jobLists(props.title)}>
-      {props.icon ? (
-        <>
-          {/**
-           * props.jobDetails is a 2d array, so every index has another array
-           * example, for TODO card,
-           * {props.jobDetails} = [['Job#1', 'Not initialized'],['Job#2', 'Initialized'],['Job#3', 'Underway']]
-           * {props.jobDetails[0]} = ['Job#1', 'Not initialized'],
-           * {props.jobDetails[1]} = ['Job#2', 'Initialized'] and so on
-           * this individual index values of {props.jobDetails} are passed to JobField Component as props
-           * along with fill and icon
-           */}
+      <div className={jobLists(props.title)}>
+        {props.icon ? (
+          <>
+            {/**
+             * props.jobDetails is a 2d array, so every index has another array
+             * example, for TODO card,
+             * {props.jobDetails} = [['Job#1', 'Not initialized'],['Job#2', 'Initialized'],['Job#3', 'Underway']]
+             * {props.jobDetails[0]} = ['Job#1', 'Not initialized'],
+             * {props.jobDetails[1]} = ['Job#2', 'Initialized'] and so on
+             * this individual index values of {props.jobDetails} are passed to JobField Component as props
+             * along with fill and icon
+             */}
 
-          <JobField
-            jobDetails={props.jobDetails[0]}
-            icon={props.icon}
-            priority="High"
-            fill="#D80027"
-          />
-          <JobField
-            jobDetails={props.jobDetails[1]}
-            icon={props.icon}
-            priority="Medium"
-            fill="#FB7925"
-          />
-          <JobField
-            jobDetails={props.jobDetails[2]}
-            icon={props.icon}
-            priority="Low"
-            fill="#686868"
-            rotate="rotate(180deg"
-          />
-        </>
-      ) : (
-        <>
-          <JobField jobDetails={props.jobDetails[0]} />
-          <JobField jobDetails={props.jobDetails[1]} />
-          <JobField jobDetails={props.jobDetails[2]} />
-        </>
-      )}
-
+            <JobField
+              jobDetails={props.jobDetails[0]}
+              icon={props.icon}
+              priority="High"
+              fill="#D80027"
+            />
+            <JobField
+              jobDetails={props.jobDetails[1]}
+              icon={props.icon}
+              priority="Medium"
+              fill="#FB7925"
+            />
+            <JobField
+              jobDetails={props.jobDetails[2]}
+              icon={props.icon}
+              priority="Low"
+              fill="#686868"
+              rotate="rotate(180deg"
+            />
+          </>
+        ) : (
+          <>
+            <JobField jobDetails={props.jobDetails[0]} />
+            <JobField jobDetails={props.jobDetails[1]} />
+            <JobField jobDetails={props.jobDetails[2]} />
+          </>
+        )}
       </div>
     </div>
   );
@@ -130,40 +128,38 @@ export const Jobs = () => {
   const [openModal, setOpenModal] = useState(false);
   return (
     <>
-    <div classname="job__topbar" style={{display:"flex", width:"100%", justifyContent:"space-between"}}>
-    <div className="job__status-add">
-          <a href="#" className="job__status-add--btn">
-             <h3
-              onClick={() => {
-                setOpenModal(true); //opens modal box on click by setting openModel to true
-              }}
-              >
-              Add Job
-            </h3>
-          </a>
-    </div>
-    <div className="job__status-add">
-          <a href="#" className="job__status-add--btn">
-            <svg className="small-svg">
-              <use xlinkHref="img/blackbox.svg#add"></use>
-            </svg>
-            <h3
-              onClick={() => {
-                setOpenModal(true); //opens modal box on click by setting openModel to true
-              }}
-              >
-              Add Job
-            </h3>
-          </a>
+      <div
+        classname="job__topbar"
+        style={{
+          display: "flex",
+          width: "100%",
+          justifyContent: "space-between",
+        }}
+      >
+        <div className="job__status-add">
+          <button className="job__status-add--btn">
+          View BTLX Files
+          </button>
+        </div>
+        <div className="job__status-add">
+          <button
+            className="job__status-add--btn"
+            onClick={() => {
+              setOpenModal(true); //opens modal box on click by setting openModel to true
+            }}
+          >
+            
+            Add Job
+          </button>
           {openModal && <Modal hideModal={setOpenModal} />}
           {/* opens modal box if openModel is set true  */}
         </div>
-        </div>
-    <section className="jobs">
-      <Job title="To-Do" icon={true} jobDetails={todoJobs} />
-      <Job title="In Progress" jobDetails={inProgJobs} />
-      <Job title="Done" jobDetails={doneJobs} />
-    </section>
-              </>
+      </div>
+      <section className="jobs">
+        <Job title="To-Do" icon={true} jobDetails={todoJobs} />
+        <Job title="In Progress" jobDetails={inProgJobs} />
+        <Job title="Done" jobDetails={doneJobs} />
+      </section>
+    </>
   );
 };

@@ -107,8 +107,9 @@ const NavLinks = (props) => {
             <h1 className="sidebar__logo logo-hide"  hide="1" id="logo" collapse="1">Lengeman</h1>
           </Link>
             <div className="sidebar__user logo-hide" hide="1">
+            <span className="sidebar__user--name " id="userName"  >Harry Potter</span>
               <div className="sidebar__user--pic"><pic id="profilePic"></pic></div>
-              <span className="sidebar__user--name " id="userName"  >Harry Potter</span>
+              
             </div>
           </div>
           <div className="line"></div>
