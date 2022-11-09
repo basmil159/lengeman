@@ -1,4 +1,4 @@
-// css for base components 
+// css for base components
 
 /* normalize css */
 *,
@@ -32,6 +32,7 @@ body {
   // $color-grey-light;
   box-sizing: border-box;
   padding: 0;
+
   font-family: DM Sans;
 }
 
@@ -41,23 +42,23 @@ body {
   background-color: $color-primary-light;
 }
 
-
-
 .wrapper {
   display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
+  justify-content: space-between;
+  align-items: flex-start;
   position: relative;
   transition: all 0.3s ease;
   overflow-x: hidden;
-  &__body{
+  &__body {
     position: relative;
     width: calc(100vw - 10rem);
     height: 100vh;
+    transition: all 0.5s;
     padding: 1.5rem 2.5rem;
+    margin-left: 10rem;
   }
 
-  button{
+  button {
     background-color: #f1f0fb;
     border-radius: 8px;
     font-size: 1.6rem;
@@ -68,14 +69,13 @@ body {
     text-transform: uppercase;
     padding: 0.5rem 1rem;
     border: none;
-    box-shadow: 5px 5px 8px #cdccd5, -5px -5px 8px  #ffffff;
-    &:hover{
+    box-shadow: 5px 5px 8px #cdccd5, -5px -5px 8px #ffffff;
+    &:hover {
       box-shadow: -5px -5px 8px #cdccd5, 5px 5px 8px #ffffff;
     }
 
-    &:active{
+    &:active {
       box-shadow: inset 5px 5px 10px #cdccd58c, inset -5px -5px 10px #ffffffbd;
     }
   }
-
 }
