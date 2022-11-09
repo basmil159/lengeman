@@ -44,7 +44,10 @@ const doneJobs = [
 
 const JobField = (props) => {
   return (
-    <div className='job__status-list job__status-list--add'>
+    <div
+      className='job__status-list job__status-list--add'
+      draggable={props.icon ? 'true' : false}
+    >
       {/* props.icon passes from Job component inside Jobs to JobFields, refer top comment for more detail */}
       {props.icon ? (
         <svg
@@ -137,7 +140,7 @@ const Job = (props) => {
               rotate='rotate(180deg'
             />
             <JobField
-              jobDetails={props.jobDetails[5]}
+              jobDetails={props.jobDetails[4]}
               icon={props.icon}
               priority='Low'
               fill='#686868'

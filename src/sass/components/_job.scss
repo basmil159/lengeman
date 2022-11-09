@@ -16,19 +16,19 @@
   animation: moveInRight 1s ease-in-out;
   height: 100%;
   // background-color: $color-grey-light;
-  padding: 1.5rem 2rem;
+  padding: 1.5rem 0rem;
   // border: 1px solid #e4e4e4;
   border-radius: 10px;
   background: #f1f0fb;
   box-shadow: 2px 2px 12px #cccccc, -1px -1px 12px #ddd9d9;
   overflow-x: hidden;
-  overflow-y: auto;
   transition: all 0.5s;
 
   &__status {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    padding: 0 2rem;
 
     h3 {
       left: 0;
@@ -105,6 +105,8 @@
     &--progress,
     &--done {
       margin-bottom: 1rem;
+      max-height: calc(100% - 5rem);
+      overflow-y: auto;
     }
 
     &--to-do {
