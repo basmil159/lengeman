@@ -1,6 +1,5 @@
 import Modal from './Modal'
 import React, { useState } from 'react'
-import blackbox from '../img/blackbox.svg'
 
 function jobTitles(args) {
   if (args === 'To-Do') return 'job__status--to-do'
@@ -18,6 +17,9 @@ const todoJobs = [
   ['Job#1', 'Not initialised'],
   ['Job#2', 'Initalised'],
   ['Job#3', 'Underway'],
+  ['Job#4', 'Not initialised'],
+  ['Job#5', 'Initalised'],
+  ['Job#6', 'Underway'],
 ]
 
 const inProgJobs = [
@@ -115,6 +117,27 @@ const Job = (props) => {
             />
             <JobField
               jobDetails={props.jobDetails[2]}
+              icon={props.icon}
+              priority='Low'
+              fill='#686868'
+              rotate='rotate(180deg'
+            />
+            <JobField
+              jobDetails={props.jobDetails[3]}
+              icon={props.icon}
+              priority='Low'
+              fill='#686868'
+              rotate='rotate(180deg'
+            />
+            <JobField
+              jobDetails={props.jobDetails[4]}
+              icon={props.icon}
+              priority='Low'
+              fill='#686868'
+              rotate='rotate(180deg'
+            />
+            <JobField
+              jobDetails={props.jobDetails[5]}
               icon={props.icon}
               priority='Low'
               fill='#686868'

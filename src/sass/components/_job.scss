@@ -1,7 +1,8 @@
 // css for Job Page
 .jobs {
   width: 100%;
-  grid-template-rows: repeat(auto-fit, minmax(60rem, 1fr));
+  max-height: calc(100vh - 10.5rem);
+  grid-template-rows: repeat(auto-fit, minmax(calc(100vh - 10.5rem), 1fr));
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(28rem, 1fr));
   gap: 2.5rem;
@@ -11,6 +12,7 @@
 
 .job {
   // width: 48%;
+
   animation: moveInRight 1s ease-in-out;
   height: 100%;
   // background-color: $color-grey-light;
@@ -20,6 +22,7 @@
   background: #f1f0fb;
   box-shadow: 2px 2px 12px #cccccc, -1px -1px 12px #ddd9d9;
   overflow-x: hidden;
+  overflow-y: auto;
   transition: all 0.5s;
 
   &__status {
@@ -42,16 +45,17 @@
     }
   }
   &__status-list {
-    padding: 1.6rem;
-    margin-top: 1.5rem;
-    position: relative;
-    box-sizing: border-box;
+    grid-row-gap: 1.2rem;
     border-radius: 8px;
+    box-sizing: border-box;
     display: grid;
     grid-template-columns: 1fr 1fr;
-    row-gap: 1.2rem;
-    min-height: 8.7rem;
     justify-items: center;
+    min-height: 8.7rem;
+    padding: 1.6rem;
+    position: relative;
+    margin-top: 1.6rem;
+    row-gap: 1.2rem;
     // border-radius: 10px;
     // background: #f1f0fb;
     // box-shadow: 4px 4px 5px #cdccd5, -5px -5px 10px #ffffff;
@@ -107,7 +111,13 @@
       color: $color-grey-dark;
 
       .job__status-list {
-        grid-template-columns: 1fr 2fr 1fr !important;
+        cursor: move;
+        justify-items: stretch;
+        grid-template-columns: 1fr 1fr 1fr !important;
+
+        &--delete-info {
+          align-items: flex-end;
+        }
       }
     }
     &--progress {
