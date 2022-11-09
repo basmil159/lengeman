@@ -105,7 +105,7 @@ export const Sidebar = () => {
   return (
     <section id='sidebar' className='sidebar'>
       <div className='sidebar__top'>
-        <Link to='/lengeman/' className='sidebar__logo-box'>
+        <Link to='/lengeman' className='sidebar__logo-box'>
           <div className='sidebar__logo--blackbox logo-hide' hide='1'>
             <img src={logo} width='28' height='28' alt='BLACKBOX' />
             <span>BlackBOX</span>
