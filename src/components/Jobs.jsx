@@ -1,34 +1,35 @@
-import Modal from "./Modal";
-import React, { useState } from "react";
+import Modal from './Modal'
+import React, { useState } from 'react'
+import blackbox from '../img/blackbox.svg'
 
 function jobTitles(args) {
-  if (args === "To-Do") return "job__status--to-do";
-  if (args === "In Progress") return "job__status--progress";
-  if (args === "Done") return "job__status--done";
+  if (args === 'To-Do') return 'job__status--to-do'
+  if (args === 'In Progress') return 'job__status--progress'
+  if (args === 'Done') return 'job__status--done'
 }
 
 function jobLists(args) {
-  if (args === "To-Do") return "job__status-list--to-do";
-  if (args === "In Progress") return "job__status-list--progress";
-  if (args === "Done") return "job__status-list--done";
+  if (args === 'To-Do') return 'job__status-list--to-do'
+  if (args === 'In Progress') return 'job__status-list--progress'
+  if (args === 'Done') return 'job__status-list--done'
 }
 
 const todoJobs = [
-  ["Job#1", "Not initialised"],
-  ["Job#2", "Initalised"],
-  ["Job#3", "Underway"],
-];
+  ['Job#1', 'Not initialised'],
+  ['Job#2', 'Initalised'],
+  ['Job#3', 'Underway'],
+]
 
 const inProgJobs = [
-  ["Job#1", "55% completed"],
-  ["Job#2", "75% completed"],
-  ["Job#3", "85% completed"],
-];
+  ['Job#1', '55% completed'],
+  ['Job#2', '75% completed'],
+  ['Job#3', '85% completed'],
+]
 const doneJobs = [
-  ["Job#1", "Feb 22, 2022"],
-  ["Job#2", "Feb 23, 2020"],
-  ["Job#3", "Feb 02, 2019"],
-];
+  ['Job#1', 'Feb 22, 2022'],
+  ['Job#2', 'Feb 23, 2020'],
+  ['Job#3', 'Feb 02, 2019'],
+]
 
 /**
  * @Job component receives title, icon and jobDetails props
@@ -41,42 +42,50 @@ const doneJobs = [
 
 const JobField = (props) => {
   return (
-    <div className="job__status-list job__status-list--add">
+    <div className='job__status-list job__status-list--add'>
       {/* props.icon passes from Job component inside Jobs to JobFields, refer top comment for more detail */}
       {props.icon ? (
         <svg
-          className="big-svg job__status-list--priority"
+          className='big-svg job__status-list--priority'
           fill={props.fill}
           style={{ transform: props.rotate }}
         >
           <title>{props.priority} Priority</title>
-          <use xlinkHref="img/blackbox.svg#arrow-up-red"></use>
+          <use
+            xlinkHref={
+              process.env.PUBLIC_URL + `/img/blackbox.svg#arrow-up-red`
+            }
+          ></use>
         </svg>
       ) : null}
 
-      <div className="job__status-list--text">
+      <div className='job__status-list--text'>
         <h2> {props.jobDetails[0]} </h2>
         <p> {props.jobDetails[1]}</p>
       </div>
-      <div className="job__status-list--delete-info">
-        <svg className="small-svg job__status-list--delete">
-          <use xlinkHref="img/blackbox.svg#delete"></use>
+      <div className='job__status-list--delete-info'>
+        <svg className='small-svg job__status-list--delete'>
+          <use
+            xlinkHref={process.env.PUBLIC_URL + `/img/blackbox.svg#delete`}
+          ></use>
         </svg>
-        <svg className="small-svg job__status-list--info">
-          <use xlinkHref="img/blackbox.svg#error"></use>
+        <svg className='small-svg job__status-list--info'>
+          <use
+            xlinkHref={process.env.PUBLIC_URL + `/img/blackbox.svg#error`}
+          ></use>
         </svg>
       </div>
     </div>
-  );
-};
+  )
+}
 
 const Job = (props) => {
   return (
     <div className={`job ${props.title}`}>
-      <div className="job__status">
+      <div className='job__status'>
         <h3 className={jobTitles(props.title)}>{props.title}</h3>
-        <svg className="small-svg">
-          <use xlinkHref="img/blackbox.svg#filter_list"></use>
+        <svg className='small-svg'>
+          <use xlinkHref='img/blackbox.svg#filter_list'></use>
         </svg>
       </div>
       <div className={jobLists(props.title)}>
@@ -95,21 +104,21 @@ const Job = (props) => {
             <JobField
               jobDetails={props.jobDetails[0]}
               icon={props.icon}
-              priority="High"
-              fill="#D80027"
+              priority='High'
+              fill='#D80027'
             />
             <JobField
               jobDetails={props.jobDetails[1]}
               icon={props.icon}
-              priority="Medium"
-              fill="#FB7925"
+              priority='Medium'
+              fill='#FB7925'
             />
             <JobField
               jobDetails={props.jobDetails[2]}
               icon={props.icon}
-              priority="Low"
-              fill="#686868"
-              rotate="rotate(180deg"
+              priority='Low'
+              fill='#686868'
+              rotate='rotate(180deg'
             />
           </>
         ) : (
@@ -121,45 +130,42 @@ const Job = (props) => {
         )}
       </div>
     </div>
-  );
-};
+  )
+}
 
 export const Jobs = () => {
-  const [openModal, setOpenModal] = useState(false);
+  const [openModal, setOpenModal] = useState(false)
   return (
     <>
       <div
-        classname="job__topbar"
+        classname='job__topbar'
         style={{
-          display: "flex",
-          width: "100%",
-          justifyContent: "space-between",
+          display: 'flex',
+          width: '100%',
+          justifyContent: 'space-between',
         }}
       >
-        <div className="job__status-add">
-          <button className="job__status-add--btn">
-          View BTLX Files
-          </button>
+        <div className='job__status-add'>
+          <button className='job__status-add--btn'>View BTLX Files</button>
         </div>
-        <div className="job__status-add">
+        <div className='job__status-add'>
           <button
-            className="job__status-add--btn"
+            className='job__status-add--btn'
             onClick={() => {
-              setOpenModal(true); //opens modal box on click by setting openModel to true
+              setOpenModal(true) //opens modal box on click by setting openModel to true
             }}
           >
-            
             Add Job
           </button>
           {openModal && <Modal hideModal={setOpenModal} />}
           {/* opens modal box if openModel is set true  */}
         </div>
       </div>
-      <section className="jobs">
-        <Job title="To-Do" icon={true} jobDetails={todoJobs} />
-        <Job title="In Progress" jobDetails={inProgJobs} />
-        <Job title="Done" jobDetails={doneJobs} />
+      <section className='jobs'>
+        <Job title='To-Do' icon={true} jobDetails={todoJobs} />
+        <Job title='In Progress' jobDetails={inProgJobs} />
+        <Job title='Done' jobDetails={doneJobs} />
       </section>
     </>
-  );
-};
+  )
+}

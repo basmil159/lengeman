@@ -17,10 +17,10 @@
   padding: 1.5rem 2rem;
   // border: 1px solid #e4e4e4;
   border-radius: 10px;
-    background: #f1f0fb;
-    box-shadow: 2px 2px 12px #cccccc, -1px -1px 12px #ddd9d9;
-    overflow-x: hidden;
-    transition: all 0.5s;
+  background: #f1f0fb;
+  box-shadow: 2px 2px 12px #cccccc, -1px -1px 12px #ddd9d9;
+  overflow-x: hidden;
+  transition: all 0.5s;
 
   &__status {
     display: flex;
@@ -37,23 +37,6 @@
       font-weight: 700;
     }
 
-    &--to-do,
-    &--progress,
-    &--done {
-      margin-bottom: 1rem;
-    }
-
-    &--to-do {
-      color: $color-grey-dark;
-    }
-    &--progress {
-     
-      color: $color-primary-dark;
-    }
-    &--done {
-      color: $color-secondary;
-    }
-
     svg {
       right: 0;
     }
@@ -61,32 +44,31 @@
   &__status-list {
     padding: 1.6rem;
     margin-top: 1.5rem;
-    // background-color: #fff;
     position: relative;
-    // border: 1px solid #e4e4e4;
     box-sizing: border-box;
     border-radius: 8px;
-    display: flex;
-    justify-content:space-around;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
     row-gap: 1.2rem;
     min-height: 8.7rem;
+    justify-items: center;
     // border-radius: 10px;
     // background: #f1f0fb;
     // box-shadow: 4px 4px 5px #cdccd5, -5px -5px 10px #ffffff;
 
     &:not(:last-of-type):after {
-      content: "";
+      content: '';
       width: 100%;
       height: 2px;
       position: absolute;
       background: #e3e3e3;
       bottom: -8px;
-  }
+    }
 
     &--priority,
     &--text {
       align-self: center;
-      justify-self: start;
+      // justify-self: start;
       margin-right: 1rem;
       grid-row: 1/-1;
     }
@@ -99,11 +81,11 @@
       }
     }
 
-    &--delete-info{
-          display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    } 
+    &--delete-info {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
 
     &--delete,
     &--info {
@@ -114,12 +96,29 @@
     &:hover &--info {
       display: block;
     }
+
+    &--to-do,
+    &--progress,
+    &--done {
+      margin-bottom: 1rem;
+    }
+
+    &--to-do {
+      color: $color-grey-dark;
+
+      .job__status-list {
+        grid-template-columns: 1fr 2fr 1fr !important;
+      }
+    }
+    &--progress {
+      color: $color-primary-dark;
+    }
+    &--done {
+      color: $color-secondary;
+    }
   }
 
   &__status-add {
     margin-top: 2rem;
-    
   }
-
-
 }
