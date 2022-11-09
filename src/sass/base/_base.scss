@@ -69,20 +69,19 @@ body {
   }
 
   button {
+    align-content: center;
     background-color: #f1f0fb;
+    border: none;
     border-radius: 8px;
+    box-shadow: 5px 5px 8px #cdccd5, -5px -5px 8px #fff;
+    color: #0072bc;
+    display: flex;
     font-size: 1.6rem;
     line-height: 2.1rem;
-    color: $color-primary;
-    display: flex;
-    align-content: center;
-    text-transform: uppercase;
     padding: 0.5rem 1rem;
-    border: none;
-    box-shadow: 5px 5px 8px #cdccd5, -5px -5px 8px #ffffff;
-    &:hover {
-      box-shadow: -5px -5px 8px #cdccd5, 5px 5px 8px #ffffff;
-    }
+    text-transform: uppercase;
+    justify-content: center;
+    align-items: center;
 
     &:active {
       box-shadow: inset 5px 5px 10px #cdccd58c, inset -5px -5px 10px #ffffffbd;
