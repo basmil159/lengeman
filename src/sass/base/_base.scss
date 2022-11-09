@@ -41,6 +41,16 @@ body {
   color: $color-primary;
   background-color: $color-primary-light;
 }
+::-webkit-scrollbar-track {
+  width: 1rem !important;
+  border-radius: 10px;
+  box-shadow: 2px 2px 12px #cccccc inset, -1px -1px 12px #ddd9d9 inset;
+}
+::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  background: #f1f0fb;
+  box-shadow: 2px 2px 12px #cccccc, -1px -1px 12px #ddd9d9;
+}
 
 .wrapper {
   display: flex;
