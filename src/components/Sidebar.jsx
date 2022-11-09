@@ -105,7 +105,7 @@ export const Sidebar = () => {
   return (
     <section id='sidebar' className='sidebar'>
       <div className='sidebar__top'>
-        <Link to='/' className='sidebar__logo-box'>
+        <Link to='/lengeman/' className='sidebar__logo-box'>
           <div className='sidebar__logo--blackbox logo-hide' hide='1'>
             <img src={logo} width='28' height='28' alt='BLACKBOX' />
             <span>BlackBOX</span>
@@ -139,30 +139,40 @@ export const Sidebar = () => {
 
       <div id='navigation' className='navigation'>
         <ul className='navigation__nav'>
-          <NavLinks icon='work' title='Jobs' NavLinks='/' state={openNav} />
+          <NavLinks
+            icon='work'
+            title='Jobs'
+            NavLinks='/lengeman/'
+            state={openNav}
+          />
           <NavLinks
             icon='tool'
             title='Tool'
-            NavLinks='/tools'
+            NavLinks='/lengeman/tools'
             state={openNav}
           />
           <NavLinks
             icon='materials'
             title='Boards'
-            NavLinks='/boards'
+            NavLinks='/lengeman/boards'
             state={openNav}
           />
           <NavLinks
             icon='configure'
             title='Configure'
-            NavLinks='/configure'
+            NavLinks='/lengeman/configure'
             state={openNav}
           />
-          <NavLinks icon='log' title='Logs' NavLinks='/Logs' state={openNav} />
+          <NavLinks
+            icon='log'
+            title='Logs'
+            NavLinks='/lengeman/Logs'
+            state={openNav}
+          />
           <NavLinks
             icon='simulation'
             title='Simulation'
-            NavLinks='/simulation'
+            NavLinks='/lengeman/simulation'
             state={openNav}
           />
           {/* <NavLinks icon="setting" title="Site Setting" NavLinks="#" state={openNav}/> */}
