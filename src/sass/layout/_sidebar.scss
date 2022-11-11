@@ -173,20 +173,17 @@
 
 .toggle {
   z-index: 99;
-  left: 10rem;
-  top: 57px;
-  transform: translate(-50%, 0);
+  left: 8.5rem;
+  top: 50px;
   position: relative;
-  width: 4rem;
-  height: 4rem;
+  width: 3.2rem;
+  height: 3.2rem;
   display: flex;
   align-items: center;
   justify-content: center;
   margin: 2rem 0;
-  box-shadow: 4px -1px 8px #cdccd5;
-  box-shadow: 0.4rem 0rem 0.3rem rgb(195 193 198 / 90%),
-    -0.2rem -2.2rem 0.4rem transparent;
-  box-shadow: -0.3rem -0.3rem 0.5rem transparent, 0.2rem 0.2rem 0.4rem #fff;
+  box-shadow: -0.3rem -0.3rem 0.5rem rgba(195, 193, 198, 0.9),
+    0.2rem 0.2rem 0.4rem #fff;
   border-radius: 50%;
   background: #f1f0fb;
   transition: all 0.5s;
@@ -197,43 +194,20 @@
       0.3rem 0.3rem 0.5rem rgb(195 193 198 / 90%), -0.2rem -0.2rem 0.4rem #fff;
   }
 }
-.toggle span {
-  position: absolute;
-  width: 1rem;
-  height: 0.25rem;
-  border-radius: 4px;
-  background-color: #0072bc;
-  transition: 0.65s;
+.toggle svg {
+  transform: rotate(180deg);
+  height: 16px;
+  width: 16px;
+  stroke: rgb(0, 114, 188);
+  stroke-width: 4;
+  overflow: visible;
+  transition: all 0.5s;
 }
-.toggle span:nth-child(1) {
-  transform: translateY(-8px);
-  width: 2rem;
-}
+
 .toggle.active {
-  margin: 1rem 0;
-  left: 24rem;
+  left: 20.5rem;
   position: absolute;
-  transform: translateX(-100%);
-}
-.toggle.active span:nth-child(1) {
-  transform: translateY(0) rotate(45deg);
-  width: 2rem;
-  left: 10px;
-}
-.toggle span:nth-child(2) {
-  transform: translateY(8px);
-  width: 2rem;
-}
-.toggle.active span:nth-child(2) {
-  transform: translateY(0) rotate(315deg);
-  width: 2rem;
-  left: 10px;
-}
-
-.toggle span:nth-child(3) {
-  right: 10px;
-}
-
-.toggle.active span:nth-child(3) {
-  transform: translateX(-60rem);
+  box-shadow: inset 0.2rem 0.2rem 0.5rem rgb(195 193 198 / 90%),
+    inset -0.2rem -0.2rem 0.5rem #fff,
+    0.3rem 0.3rem 0.5rem rgb(195 193 198 / 90%), -0.2rem -0.2rem 0.4rem #fff;
 }

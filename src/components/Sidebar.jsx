@@ -67,6 +67,8 @@ export const Sidebar = () => {
     })
     if (openNav) {
       setOpenNav(false)
+      document.getElementById('togglemenu').style.transform = 'rotate(180deg)'
+
       document.getElementById('sidebar').style.width = '8rem'
       document.querySelectorAll('.nav-element').forEach((element) => {
         element.style.justifyContent = 'center'
@@ -76,6 +78,8 @@ export const Sidebar = () => {
       })
     } else {
       setOpenNav(true)
+      document.getElementById('togglemenu').style.transform = 'rotate(0deg)'
+
       document.getElementById('sidebar').style.width = '20rem'
       document.querySelectorAll('.nav-element').forEach((element) => {
         element.style.justifyContent = 'left'
@@ -91,9 +95,11 @@ export const Sidebar = () => {
   return (
     <>
       <div class='toggle' onClick={toggleMenu}>
-        <span></span>
-        <span></span>
-        <span></span>
+        <svg id='togglemenu' className='small-svg'>
+          <use
+            xlinkHref={process.env.PUBLIC_URL + `/img/blackbox.svg#menuarrow`}
+          ></use>
+        </svg>
       </div>
       <section id='sidebar' className='sidebar'>
         <div className='sidebar__top'>
