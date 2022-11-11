@@ -62,8 +62,9 @@
 
     &:not(:last-of-type):after {
       content: '';
-      width: 100%;
+      width: 92%;
       height: 2px;
+      margin: 0px 4%;
       position: absolute;
       background: #e3e3e3;
       bottom: -8px;

@@ -18,26 +18,9 @@ const activePage = () => {
   })
 }
 
-const names = () => {
-  var down = document.getElementById('userName')
-  var arr = [
-    'Jung Bahadur',
-    'Harry Potter',
-    'Iron Man',
-    'Dustin Will',
-    'Christian',
-  ]
-  down.innerHTML = arr[Math.floor(Math.random() * arr.length)]
-}
-
 window.onload = () => {
   // Call active page function so that the home page or any active page is displayed as active in navbar
   activePage()
-  names()
-  // For extracting the first letter from the username and use it as a profile Pic
-  let firstName = document.getElementById('userName').innerText
-  let intials = firstName.charAt(0)
-  let profileImage = (document.getElementById('profilePic').innerText = intials)
 }
 
 const NavLinks = (props) => {
@@ -106,85 +89,87 @@ export const Sidebar = () => {
   }
 
   return (
-    <section id='sidebar' className='sidebar'>
-      <div className='sidebar__top'>
-        <Link to='/lengeman' className='sidebar__logo-box'>
-          <div className='sidebar__logo--blackbox logo-hide' hide='1'>
-            <img src={logo} width='28' height='28' alt='BLACKBOX' />
-            <span>BlackBOX</span>
-          </div>
-          <h1
-            className='sidebar__logo logo-hide'
-            hide='1'
-            id='logo'
-            collapse='1'
-          >
-            Lengeman
-          </h1>
-        </Link>
-        <div class='toggle' onClick={toggleMenu}>
-          <span></span>
-          <span></span>
-          <span></span>
-        </div>
-        <div className='sidebar__user logo-hide' hide='1'>
-          <span
-            className='sidebar__user--name '
-            id='userName'
-            onChange={names}
-          ></span>
-          <div className='sidebar__user--pic'>
-            <pic id='profilePic'></pic>
-          </div>
-        </div>
+    <>
+      <div class='toggle' onClick={toggleMenu}>
+        <span></span>
+        <span></span>
+        <span></span>
       </div>
-      <div className='line'></div>
+      <section id='sidebar' className='sidebar'>
+        <div className='sidebar__top'>
+          <Link to='/lengeman' className='sidebar__logo-box'>
+            <div className='sidebar__logo--blackbox logo-hide' hide='1'>
+              <img src={logo} width='28' height='28' alt='BLACKBOX' />
+              <span>BlackBOX</span>
+            </div>
+            <h1
+              className='sidebar__logo logo-hide'
+              hide='1'
+              id='logo'
+              collapse='1'
+            >
+              Lengeman
+            </h1>
+          </Link>
 
-      <div id='navigation' className='navigation'>
-        <ul className='navigation__nav'>
-          <NavLinks
-            icon='work'
-            title='Jobs'
-            NavLinks='/lengeman/'
-            state={openNav}
-          />
-          <NavLinks
-            icon='tool'
-            title='Tool'
-            NavLinks='/lengeman/tools'
-            state={openNav}
-          />
-          <NavLinks
-            icon='materials'
-            title='Boards'
-            NavLinks='/lengeman/boards'
-            state={openNav}
-          />
-          <NavLinks
-            icon='configure'
-            title='Configure'
-            NavLinks='/lengeman/configure'
-            state={openNav}
-          />
-          <NavLinks
-            icon='log'
-            title='Logs'
-            NavLinks='/lengeman/Logs'
-            state={openNav}
-          />
-          <NavLinks
-            icon='simulation'
-            title='Simulation'
-            NavLinks='/lengeman/simulation'
-            state={openNav}
-          />
-          {/* <NavLinks icon="setting" title="Site Setting" NavLinks="#" state={openNav}/> */}
-        </ul>
-      </div>
-      <div className='sidebar__bottom logo-hide' hide='1'>
-        <Svgs icon='setting' title='small-svg' />
-        <span>Setting</span>
-      </div>
-    </section>
+          <div className='sidebar__user logo-hide' hide='1'>
+            <div className='sidebar__user--pic'>
+              <Svgs icon='userpic' title='big-svg' />
+            </div>
+            <div className='sidebar__user--name '>
+              <span className='sidebar__user--user-name'>Junga Bahadur</span>
+              <span className='sidebar__user--user-position'>Admin</span>
+            </div>
+          </div>
+        </div>
+        <div className='line'></div>
+
+        <div id='navigation' className='navigation'>
+          <ul className='navigation__nav'>
+            <NavLinks
+              icon='work'
+              title='Jobs'
+              NavLinks='/lengeman/'
+              state={openNav}
+            />
+            <NavLinks
+              icon='tool'
+              title='Tool'
+              NavLinks='/lengeman/tools'
+              state={openNav}
+            />
+            <NavLinks
+              icon='materials'
+              title='Boards'
+              NavLinks='/lengeman/boards'
+              state={openNav}
+            />
+            <NavLinks
+              icon='configure'
+              title='Configure'
+              NavLinks='/lengeman/configure'
+              state={openNav}
+            />
+            <NavLinks
+              icon='log'
+              title='Logs'
+              NavLinks='/lengeman/Logs'
+              state={openNav}
+            />
+            <NavLinks
+              icon='simulation'
+              title='Simulation'
+              NavLinks='/lengeman/simulation'
+              state={openNav}
+            />
+            {/* <NavLinks icon="setting" title="Site Setting" NavLinks="#" state={openNav}/> */}
+          </ul>
+        </div>
+        <div className='sidebar__bottom logo-hide' hide='1'>
+          <Svgs icon='setting' title='small-svg' />
+          <span>Setting</span>
+        </div>
+      </section>
+    </>
   )
 }
