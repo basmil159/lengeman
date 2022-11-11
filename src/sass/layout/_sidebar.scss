@@ -11,8 +11,9 @@
   z-index: 2;
   border-radius: 10px;
   background: #f1f0fb;
-  box-shadow: 0.3rem 0.3rem 0.5rem rgba(195, 193, 198, 0.9),
-    -0.2rem -0.2rem 0.4rem #fff;
+
+  box-shadow: -0.3rem -0.3rem 0.5rem rgba(195, 193, 198, 0.9),
+    0.2rem 0.2rem 0.4rem #fff;
   overflow-x: hidden;
   transition: all 0.5s;
   position: fixed;
@@ -185,6 +186,7 @@
   box-shadow: 4px -1px 8px #cdccd5;
   box-shadow: 0.4rem 0rem 0.3rem rgb(195 193 198 / 90%),
     -0.2rem -2.2rem 0.4rem transparent;
+  box-shadow: -0.3rem -0.3rem 0.5rem transparent, 0.2rem 0.2rem 0.4rem #fff;
   border-radius: 50%;
   background: #f1f0fb;
   transition: all 0.5s;
