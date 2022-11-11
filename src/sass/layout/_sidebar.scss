@@ -11,8 +11,8 @@
   z-index: 2;
   border-radius: 10px;
   background: #f1f0fb;
-  box-shadow: -0.3rem -0.3rem 0.5rem rgba(195, 193, 198, 0.9),
-    0.2rem 0.2rem 0.4rem #fff;
+  box-shadow: 0.3rem 0.3rem 0.5rem rgba(195, 193, 198, 0.9),
+    -0.2rem -0.2rem 0.4rem #fff;
   overflow-x: hidden;
   transition: all 0.5s;
   position: fixed;
@@ -31,8 +31,8 @@
   .logo-hide[hide] {
     flex-direction: column;
     img {
-      width: 3.2rem;
-      height: 3.2rem;
+      width: 4.2rem;
+      height: 4.2rem;
     }
   }
   &__top {
@@ -42,7 +42,7 @@
 
   &__logo-box {
     display: block;
-
+    letter-spacing: 0.5px;
     padding: 0.5rem;
     margin-bottom: 1rem;
     user-select: none;
@@ -52,7 +52,7 @@
     text-align: center;
     color: $color-primary;
     transition: font-size 0.5s;
-    letter-spacing: -2.5px;
+
     font-size: 3rem;
     line-height: 2.5rem;
 
@@ -172,8 +172,8 @@
 
 .toggle {
   z-index: 99;
-  left: 9rem;
-  top: 40px;
+  left: 10rem;
+  top: 47px;
   transform: translate(-50%, 0);
   position: relative;
   width: 4rem;
@@ -183,9 +183,17 @@
   justify-content: center;
   margin: 2rem 0;
   box-shadow: 4px -1px 8px #cdccd5;
+  box-shadow: 0.4rem 0rem 0.3rem rgb(195 193 198 / 90%),
+    -0.2rem -2.2rem 0.4rem transparent;
   border-radius: 50%;
   background: #f1f0fb;
   transition: all 0.5s;
+
+  &:active {
+    box-shadow: inset 0.2rem 0.2rem 0.5rem rgb(195 193 198 / 90%),
+      inset -0.2rem -0.2rem 0.5rem #fff,
+      0.3rem 0.3rem 0.5rem rgb(195 193 198 / 90%), -0.2rem -0.2rem 0.4rem #fff;
+  }
 }
 .toggle span {
   position: absolute;

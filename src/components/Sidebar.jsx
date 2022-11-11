@@ -72,7 +72,7 @@ export const Sidebar = () => {
         element.style.justifyContent = 'center'
       })
       document.querySelectorAll('.wrapper__body').forEach((element) => {
-        element.style.marginLeft = '10rem'
+        element.style.marginLeft = '7rem'
       })
     } else {
       setOpenNav(true)
@@ -83,7 +83,7 @@ export const Sidebar = () => {
       })
 
       document.querySelectorAll('.wrapper__body').forEach((element) => {
-        element.style.marginLeft = '22rem'
+        element.style.marginLeft = '23rem'
       })
     }
   }
