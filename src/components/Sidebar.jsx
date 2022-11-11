@@ -123,7 +123,7 @@ export const Sidebar = () => {
               <Svgs icon='userpic' title='big-svg' />
             </div>
             <div className='sidebar__user--name '>
-              <span className='sidebar__user--user-name'>Junga Bahadur</span>
+              <span className='sidebar__user--user-name'>Bahadur</span>
               <span className='sidebar__user--user-position'>Admin</span>
             </div>
           </div>
