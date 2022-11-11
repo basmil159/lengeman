@@ -126,6 +126,7 @@ export const Sidebar = () => {
               <span className='sidebar__user--user-name'>Bahadur</span>
               <span className='sidebar__user--user-position'>Admin</span>
             </div>
+            {/* <Svgs icon='signout' title='big-svg' /> */}
           </div>
         </div>
         <div className='line'></div>
