@@ -51,6 +51,7 @@
 
   &__logo {
     text-align: center;
+    letter-spacing: -2px;
     color: $color-primary;
     transition: font-size 0.5s;
 
@@ -182,8 +183,8 @@
   align-items: center;
   justify-content: center;
   margin: 2rem 0;
-  box-shadow: -0.3rem -0.3rem 0.5rem rgba(195, 193, 198, 0.9),
-    0.2rem 0.2rem 0.4rem #fff;
+  box-shadow: -0.2rem -0.2rem 0.4rem rgba(255, 255, 255, 0.9),
+    0.3rem 0.3rem 0.5rem rgba(195, 193, 198, 0.9);
   border-radius: 50%;
   background: #f1f0fb;
   transition: all 0.5s;
