@@ -100,14 +100,14 @@
     transform: translateX(-50%);
     width: 85%;
     height: 5rem;
-    padding: 0.5rem 1.5rem;
+    padding: 0.5rem 1rem;
     align-items: center;
     align-content: center;
 
     &:hover {
       color: $color-primary;
       border-radius: 50px 0 0 50px;
-      text-align: center;
+      // text-align: center;
       border-radius: 10px;
       background: #f1f0fb;
       box-shadow: 5px 5px 10px #cdccd5, -5px -5px 10px #ffffff;
@@ -135,7 +135,8 @@
 
   &__user {
     display: flex;
-    justify-content: center;
+    justify-content: space-around;
+    padding: 0px 0.5rem;
     margin-top: 1.5rem;
     align-items: center;
     gap: 0.1rem;
@@ -174,8 +175,8 @@
 
 .toggle {
   z-index: 99;
-  left: 8.5rem;
-  top: 50px;
+  left: 8.3rem;
+  top: 75px;
   position: relative;
   width: 3.2rem;
   height: 3.2rem;
@@ -183,8 +184,8 @@
   align-items: center;
   justify-content: center;
   margin: 2rem 0;
-  box-shadow: -0.2rem -0.2rem 0.4rem rgba(255, 255, 255, 0.9),
-    0.3rem 0.3rem 0.5rem rgba(195, 193, 198, 0.9);
+  box-shadow: 0rem 0rem 0.4rem #ffffffb3,
+    0.4rem 0rem 0.4rem rgb(195 193 198 / 90%);
   border-radius: 50%;
   background: #f1f0fb;
   transition: all 0.5s;
