@@ -135,7 +135,7 @@
 
   &__user {
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
     padding: 0px 0.5rem;
     margin-top: 1.5rem;
     align-items: center;
@@ -177,7 +177,7 @@
   z-index: 99;
   left: 8.3rem;
   top: 75px;
-  position: relative;
+  position: fixed;
   width: 3.2rem;
   height: 3.2rem;
   display: flex;

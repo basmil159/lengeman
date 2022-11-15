@@ -74,7 +74,7 @@ export const Sidebar = () => {
         element.style.justifyContent = 'center'
       })
       document.querySelectorAll('.wrapper__body').forEach((element) => {
-        element.style.marginLeft = '7rem'
+        element.style.marginLeft = '11rem'
       })
     } else {
       setOpenNav(true)
@@ -120,13 +120,13 @@ export const Sidebar = () => {
 
           <div className='sidebar__user logo-hide' hide='1'>
             <div className='sidebar__user--pic'>
-              <Svgs icon='userpic' title='medium-svg' />
+              <Svgs icon='userpic' title='big-svg' />
             </div>
             <div className='sidebar__user--name '>
               <span className='sidebar__user--user-name'>Bahadur</span>
               <span className='sidebar__user--user-position'>Admin</span>
             </div>
-            <Svgs icon='signout' title='small-svg' />
+            {/* <Svgs icon='signout' title='small-svg' /> */}
           </div>
         </div>
         <div className='line'></div>

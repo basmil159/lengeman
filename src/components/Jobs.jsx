@@ -1,5 +1,6 @@
 import Modal from './Modal'
 import React, { useState } from 'react'
+import { render } from '@testing-library/react'
 
 function jobTitles(args) {
   if (args === 'To-Do') return 'job__status--to-do'
@@ -23,9 +24,9 @@ const todoJobs = [
 ]
 
 const inProgJobs = [
-  ['Job#1', '55% completed'],
-  ['Job#2', '75% completed'],
-  ['Job#3', '85% completed'],
+  ['Job#1', 55],
+  ['Job#2', 75],
+  ['Job#3', 85],
 ]
 const doneJobs = [
   ['Job#1', 'Feb 22, 2022'],
@@ -42,6 +43,29 @@ const doneJobs = [
  * @jobDetails - is an array containing array.
  */
 
+const JobProgress = ({ workdone }) => {
+  var element = document.getElementById('myprogressBar')
+  var text = document.getElementById('myprogressText')
+  var width = 1
+  var identity = setInterval(() => {
+    if (width >= workdone) {
+      clearInterval(identity)
+    } else {
+      width++
+      element.style.width = width + '%'
+      text.innerHTML = width * 1 + '% Completed'
+    }
+  }, 10)
+  return (
+    <>
+      <div id='Progress_Status'>
+        <div id='myprogressBar'></div>
+        <div id='myprogressText'>1%</div>
+      </div>
+    </>
+  )
+}
+
 const JobField = (props) => {
   return (
     <div
@@ -52,23 +76,35 @@ const JobField = (props) => {
       {props.icon ? (
         <svg
           className='big-svg job__status-list--priority'
-          fill={props.fill}
+          tool={props.tool}
           style={{ transform: props.rotate }}
         >
           <title>{props.priority} Priority</title>
           <use
-            xlinkHref={
-              process.env.PUBLIC_URL + `/img/blackbox.svg#arrow-up-red`
-            }
+            xlinkHref={process.env.PUBLIC_URL + `/img/blackbox.svg#circ`}
           ></use>
         </svg>
       ) : null}
 
       <div className='job__status-list--text'>
         <h2> {props.jobDetails[0]} </h2>
-        <p> {props.jobDetails[1]}</p>
+        {Number.isInteger(props.jobDetails[1]) ? (
+          <JobProgress workdone={props.jobDetails[1]} />
+        ) : (
+          <p>{props.jobDetails[1]}</p>
+        )}
       </div>
       <div className='job__status-list--delete-info'>
+        <svg className='small-svg job__status-list--delete'>
+          <use
+            xlinkHref={process.env.PUBLIC_URL + `/img/blackbox.svg#delete`}
+          ></use>
+        </svg>
+        <svg className='small-svg job__status-list--info'>
+          <use
+            xlinkHref={process.env.PUBLIC_URL + `/img/blackbox.svg#error`}
+          ></use>
+        </svg>
         <svg className='small-svg job__status-list--delete'>
           <use
             xlinkHref={process.env.PUBLIC_URL + `/img/blackbox.svg#delete`}
@@ -110,41 +146,37 @@ const Job = (props) => {
               jobDetails={props.jobDetails[0]}
               icon={props.icon}
               priority='High'
-              fill='#D80027'
+              tool='true'
             />
             <JobField
               jobDetails={props.jobDetails[1]}
               icon={props.icon}
               priority='Medium'
-              fill='#FB7925'
+              tool='false'
             />
             <JobField
-              jobDetails={props.jobDetails[2]}
+              jobDetails={props.jobDetails[0]}
               icon={props.icon}
-              priority='Low'
-              fill='#686868'
-              rotate='rotate(180deg'
+              priority='High'
+              tool='true'
             />
             <JobField
-              jobDetails={props.jobDetails[3]}
+              jobDetails={props.jobDetails[1]}
               icon={props.icon}
-              priority='Low'
-              fill='#686868'
-              rotate='rotate(180deg'
+              priority='Medium'
+              tool='false'
             />
             <JobField
-              jobDetails={props.jobDetails[4]}
+              jobDetails={props.jobDetails[0]}
               icon={props.icon}
-              priority='Low'
-              fill='#686868'
-              rotate='rotate(180deg'
+              priority='High'
+              tool='true'
             />
             <JobField
-              jobDetails={props.jobDetails[4]}
+              jobDetails={props.jobDetails[1]}
               icon={props.icon}
-              priority='Low'
-              fill='#686868'
-              rotate='rotate(180deg'
+              priority='Medium'
+              tool='false'
             />
           </>
         ) : (
