@@ -153,9 +153,8 @@
 <path d="M17 7H7C4.24 7 2 9.24 2 12C2 14.76 4.24 17 7 17H17C19.76 17 22 14.76 22 12C22 9.24 19.76 7 17 7ZM7 15C5.34 15 4 13.66 4 12C4 10.34 5.34 9 7 9C8.66 9 10 10.34 10 12C10 13.66 8.66 15 7 15Z"  fill="#5C5C5C"/>
 </symbol>
 
-<symbol id="arrow-up-red"  viewBox="0 0 20 20">
-
-<path d="M3.33334 9.99998L4.51251 11.1791L9.16668 6.52498V16.6666H10.8333V6.52498L15.4875 11.1791L16.6667 9.99998L10 3.33331L3.33334 9.99998Z"/>
+<symbol id="circ" viewBox="0 0 100 100" >
+  <circle cx="50" cy="50" r="40" fill="none" stroke="#fff" stroke-width="2"/>
 </symbol>
 
 <symbol id="delete"  viewBox="0 0 20 20">
