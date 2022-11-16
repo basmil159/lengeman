@@ -11,18 +11,9 @@
 }
 
 .job {
-  // width: 48%;
-
   animation: moveInRight 1s ease-in-out;
   height: 100%;
-  // background-color: $color-grey-light;
-  padding: 1.5rem 0rem;
-  // border: 1px solid #e4e4e4;
-  // border-radius: 10px;
-  // background: #f1f0fb;
-  // box-shadow: 2px 2px 12px #cccccc, -1px -1px 12px #ddd9d9;
-  // box-shadow: -0.2rem -0.2rem 0.5rem rgba(216, 216, 216, 0.9),
-  //   0.3rem 0.3rem 0.5rem rgba(195, 193, 198, 0.9);
+  padding-top: 1.5rem;
   overflow-x: hidden;
   transition: all 0.5s;
 
@@ -51,16 +42,13 @@
     box-shadow: inset 0.2rem 0.2rem 0.5rem #fff,
       inset -0.2rem -0.2rem 0.5rem rgb(195 193 198 / 90%),
       0.3rem 0.3rem 0.5rem rgb(195 193 198 / 90%), -0.2rem -0.2rem 0.4rem #fff;
-    justify-items: stretch;
     border-radius: 8px;
     box-sizing: border-box;
     display: grid;
-    grid-template-columns: 2fr 1.5fr;
-    justify-items: center;
-    padding: 1rem;
+    grid-template-columns: 2fr 1fr;
+    padding: 1rem 2rem;
     min-height: 8.7rem;
     margin: 1.6rem 0;
-
     position: relative;
     gap: 1.2rem;
 
@@ -82,14 +70,14 @@
     // }
     &--priority[tool='false'] {
       fill: #fff;
-      width: 3rem;
-      height: 3rem;
+      width: 1.2rem;
+      height: 1.2rem;
       animation: glowRED 1s ease-in-out infinite alternate;
     }
     &--priority[tool='true'] {
       fill: #fff;
-      width: 3rem;
-      height: 3rem;
+      width: 1.2rem;
+      height: 1.2rem;
       animation: glowGreen 1s ease-in-out infinite alternate;
     }
 
@@ -103,6 +91,7 @@
 
     &--text {
       display: block;
+      width: 90%;
 
       p {
         margin-top: 1rem;
@@ -113,15 +102,13 @@
       display: grid;
       grid-template-columns: 1fr 1fr;
       grid-template-rows: 1fr 1fr;
-      justify-content: end;
-      justify-items: end;
       gap: 2.5px;
       align-items: center;
       cursor: pointer;
-
-      svg:nth-child(even) {
-        justify-self: start;
-      }
+      justify-items: end;
+      // svg:nth-child(even) {
+      //   justify-self: start;
+      // }
     }
 
     // &--delete,
@@ -137,9 +124,9 @@
     &--to-do,
     &--progress,
     &--done {
-      max-height: calc(100% - 5.4rem);
+      max-height: calc(100% - 5.5rem);
       overflow-y: auto;
-      padding-right: 0.5rem;
+      padding-right: 0.8rem;
     }
 
     &--to-do {
@@ -171,30 +158,34 @@
   }
 }
 
-#Progress_Status {
-  width: 50%;
+.Progress_Status {
+  width: 110%;
+  display: flex;
+  flex-wrap: nowrap;
   background-color: #ddd;
   border-radius: 15px;
   position: relative;
-  height: 1.8rem;
+  height: 1rem;
 }
 
-#myprogressBar {
+.myprogressBar {
   width: 1%;
-  height: 1.8rem;
+  height: 1rem;
   border-radius: 15px;
   background-color: #0072bc;
-  text-align: center;
-  position: absolute;
 }
 
-#myprogressText {
-  z-index: 4;
-  color: #ddd;
+.myprogressText {
+  color: #0072bc;
   background: transparent;
-  position: relative;
   font-size: 1.4rem;
-  line-height: 1.8rem;
   padding: 0 1rem;
-  // text-align: center;
+  line-height: 1.5rem;
+  right: -5rem;
+  top: -0.25rem;
+  display: flex;
+  align-content: center;
+  justify-content: center;
+  flex-direction: column;
+  position: absolute;
 }

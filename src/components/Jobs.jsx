@@ -1,5 +1,6 @@
 import Modal from './Modal'
 import React, { useState } from 'react'
+import { useId } from 'react'
 import { render } from '@testing-library/react'
 
 function jobTitles(args) {
@@ -43,30 +44,36 @@ const doneJobs = [
  * @jobDetails - is an array containing array.
  */
 
-const JobProgress = ({ workdone }) => {
-  var element = document.getElementById('myprogressBar')
-  var text = document.getElementById('myprogressText')
-  var width = 1
-  var identity = setInterval(() => {
-    if (width >= workdone) {
-      clearInterval(identity)
-    } else {
-      width++
-      element.style.width = width + '%'
-      text.innerHTML = width * 1 + '% Completed'
-    }
-  }, 10)
+const JobProgress = ({ workdone, id }) => {
+  const update = () => {
+    let element = document.getElementById(`myprogressBar${id}`)
+    let text = document.getElementById(`myprogressText${id}`)
+    let width = 1
+    let identity = setInterval(() => {
+      if (width >= workdone) {
+        clearInterval(identity)
+      } else {
+        width++
+        element.style.width = width + '%'
+        text.innerHTML = width * 1 + '%'
+      }
+    }, 10)
+  }
+  setTimeout(update, 5)
   return (
     <>
-      <div id='Progress_Status'>
-        <div id='myprogressBar'></div>
-        <div id='myprogressText'>1%</div>
-      </div>
+      <p className='Progress_Status'>
+        <div id={`myprogressBar${id}`} className='myprogressBar'></div>
+        <div id={`myprogressText${id}`} className='myprogressText'>
+          1%
+        </div>
+      </p>
     </>
   )
 }
 
 const JobField = (props) => {
+  let progressBarId = useId()
   return (
     <div
       className='job__status-list job__status-list--add'
@@ -89,7 +96,10 @@ const JobField = (props) => {
       <div className='job__status-list--text'>
         <h2> {props.jobDetails[0]} </h2>
         {Number.isInteger(props.jobDetails[1]) ? (
-          <JobProgress workdone={props.jobDetails[1]} />
+          <>
+            <JobProgress workdone={props.jobDetails[1]} id={progressBarId} />
+            {/* {update(props.jobDetails[1], progressBarId)} */}
+          </>
         ) : (
           <p>{props.jobDetails[1]}</p>
         )}
@@ -201,6 +211,7 @@ export const Jobs = () => {
           display: 'flex',
           width: '100%',
           justifyContent: 'space-between',
+          paddingRight: '0.8rem',
         }}
       >
         <div className='job__status-add'>
