@@ -142,9 +142,9 @@ const Job = (props) => {
     <div className={`job ${props.title}`}>
       <div className='job__status'>
         <h3 className={jobTitles(props.title)}>{props.title}</h3>
-        <svg className='small-svg'>
+        {/* <svg className='small-svg'>
           <use xlinkHref='img/blackbox.svg#filter_list'></use>
-        </svg>
+        </svg> */}
       </div>
       <div className={jobLists(props.title)}>
         {props.icon ? (
