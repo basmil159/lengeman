@@ -10,7 +10,7 @@ export const App = () => {
       <Sidebar />
       <div className='wrapper__body'>
         <Routes>
-          <Route path='/lengeman/' element={<Jobs />} exact />
+          <Route path='/lengeman/' element={<Jobs />} />
           <Route path='/lengeman/tools' element={<Tools />} />
           <Route path='/lengeman/boards' element={<Materials />} />
           <Route path='/lengeman/configure' element={<Setting />} />

@@ -9,9 +9,9 @@ import logo from '../img/blackbox.png'
 
 const activePage = () => {
   const activePage = window.location
-  document.querySelectorAll('.navigation__nav--elements').forEach((link) => {
+  document.querySelectorAll('a.navigation__nav--elements').forEach((link) => {
     link.classList.remove('active')
-    if (link.href == `${activePage}`) {
+    if (link.href === `${activePage}` || `${link.href}` === `${activePage}/`) {
       link.classList.add('active')
       console.log(`${activePage}`)
     }
@@ -47,6 +47,7 @@ const NavLinks = (props) => {
       <Link
         className={`navigation__nav--elements`}
         to={props.NavLinks}
+        id={props.id}
         nav-collapse={`${!props.state ? '1' : '0'}`}
       >
         <Svgs icon={props.icon} title={`small-svg ${props.title}`} />
@@ -103,7 +104,13 @@ export const Sidebar = () => {
       </div>
       <section id='sidebar' className='sidebar'>
         <div className='sidebar__top'>
-          <Link to='/lengeman' className='sidebar__logo-box'>
+          <div
+            className='sidebar__logo-box'
+            onClick={() => {
+              document.getElementById('jobpage').click()
+            }}
+            id='logolink'
+          >
             <div className='sidebar__logo--blackbox logo-hide' hide='1'>
               <img src={logo} width='28' height='28' alt='BLACKBOX' />
               <span>BlackBOX</span>
@@ -116,7 +123,7 @@ export const Sidebar = () => {
             >
               Lengeman
             </h1>
-          </Link>
+          </div>
 
           <div className='sidebar__user logo-hide' hide='1'>
             <div className='sidebar__user--pic'>
@@ -138,6 +145,7 @@ export const Sidebar = () => {
               title='Jobs'
               NavLinks='/lengeman/'
               state={openNav}
+              id='jobpage'
             />
             <NavLinks
               icon='tool'
