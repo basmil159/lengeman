@@ -86,7 +86,11 @@ const JobField = (props) => {
           tool={props.tool}
           style={{ transform: props.rotate }}
         >
-          <title>{props.priority} Priority</title>
+          {props.tool === 'true' ? (
+            <title>Tool Available</title>
+          ) : (
+            <title>Tool Not Available</title>
+          )}
           <use
             xlinkHref={process.env.PUBLIC_URL + `/img/blackbox.svg#circ`}
           ></use>
@@ -104,28 +108,31 @@ const JobField = (props) => {
           <p>{props.jobDetails[1]}</p>
         )}
       </div>
-      <div className='job__status-list--delete-info'>
-        <svg className='small-svg job__status-list--delete'>
-          <use
-            xlinkHref={process.env.PUBLIC_URL + `/img/blackbox.svg#delete`}
-          ></use>
-        </svg>
-        <svg className='small-svg job__status-list--info'>
-          <use
-            xlinkHref={process.env.PUBLIC_URL + `/img/blackbox.svg#error`}
-          ></use>
-        </svg>
-        <svg className='small-svg job__status-list--delete'>
-          <use
-            xlinkHref={process.env.PUBLIC_URL + `/img/blackbox.svg#delete`}
-          ></use>
-        </svg>
-        <svg className='small-svg job__status-list--info'>
-          <use
-            xlinkHref={process.env.PUBLIC_URL + `/img/blackbox.svg#error`}
-          ></use>
-        </svg>
-      </div>
+
+      {props.icon ? (
+        <div className='job__status-list--delete-info'>
+          <svg className='small-svg job__status-list--delete'>
+            <use
+              xlinkHref={process.env.PUBLIC_URL + `/img/blackbox.svg#delete`}
+            ></use>
+          </svg>
+          <svg className='small-svg job__status-list--info'>
+            <use
+              xlinkHref={process.env.PUBLIC_URL + `/img/blackbox.svg#error`}
+            ></use>
+          </svg>
+          <svg className='small-svg job__status-list--delete'>
+            <use
+              xlinkHref={process.env.PUBLIC_URL + `/img/blackbox.svg#delete`}
+            ></use>
+          </svg>
+          <svg className='small-svg job__status-list--info'>
+            <use
+              xlinkHref={process.env.PUBLIC_URL + `/img/blackbox.svg#error`}
+            ></use>
+          </svg>
+        </div>
+      ) : null}
     </div>
   )
 }
@@ -155,37 +162,31 @@ const Job = (props) => {
             <JobField
               jobDetails={props.jobDetails[0]}
               icon={props.icon}
-              priority='High'
               tool='true'
             />
             <JobField
               jobDetails={props.jobDetails[1]}
               icon={props.icon}
-              priority='Medium'
               tool='false'
             />
             <JobField
               jobDetails={props.jobDetails[0]}
               icon={props.icon}
-              priority='High'
               tool='true'
             />
             <JobField
               jobDetails={props.jobDetails[1]}
               icon={props.icon}
-              priority='Medium'
               tool='false'
             />
             <JobField
               jobDetails={props.jobDetails[0]}
               icon={props.icon}
-              priority='High'
               tool='true'
             />
             <JobField
               jobDetails={props.jobDetails[1]}
               icon={props.icon}
-              priority='Medium'
               tool='false'
             />
           </>
