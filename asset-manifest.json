@@ -1,14 +1,14 @@
 {
   "files": {
-    "main.css": "/lengeman/static/css/main.d46a2fc7.css",
-    "main.js": "/lengeman/static/js/main.d60f47aa.js",
+    "main.css": "/lengeman/static/css/main.61466c92.css",
+    "main.js": "/lengeman/static/js/main.1986bd3b.js",
     "static/media/blackbox.png": "/lengeman/static/media/blackbox.d1b3b075477b08dfa985.png",
     "index.html": "/lengeman/index.html",
-    "main.d46a2fc7.css.map": "/lengeman/static/css/main.d46a2fc7.css.map",
-    "main.d60f47aa.js.map": "/lengeman/static/js/main.d60f47aa.js.map"
+    "main.61466c92.css.map": "/lengeman/static/css/main.61466c92.css.map",
+    "main.1986bd3b.js.map": "/lengeman/static/js/main.1986bd3b.js.map"
   },
   "entrypoints": [
-    "static/css/main.d46a2fc7.css",
-    "static/js/main.d60f47aa.js"
+    "static/css/main.61466c92.css",
+    "static/js/main.1986bd3b.js"
   ]
 }

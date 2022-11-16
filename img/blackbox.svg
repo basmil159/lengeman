@@ -154,7 +154,7 @@
 </symbol>
 
 <symbol id="circ" viewBox="0 0 100 100" >
-  <circle cx="50" cy="50" r="40" fill="none" stroke="#fff" stroke-width="2"/>
+  <circle cx="50" cy="50" r="40" />
 </symbol>
 
 <symbol id="delete"  viewBox="0 0 20 20">
